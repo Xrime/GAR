@@ -8,11 +8,12 @@
 			"add_library",
 			"find_package",
 			"__find_dependency_common",
-			"find_dependency"
+			"find_dependency",
+			"set_target_properties"
 		],
 		"files" : 
 		[
-			"C:/msys64/mingw64/share/cmake/Modules/FindOpenSSL.cmake",
+			"C:/msys64/mingw64/lib/cmake/CURL/FindNGHTTP3.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 			"C:/msys64/mingw64/lib/cmake/CURL/CURLConfig.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/FindCURL.cmake",
@@ -26,7 +27,7 @@
 			{
 				"command" : 1,
 				"file" : 4,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -46,7 +47,7 @@
 			{
 				"command" : 3,
 				"file" : 2,
-				"line" : 62,
+				"line" : 145,
 				"parent" : 4
 			},
 			{
@@ -68,7 +69,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 846,
+				"line" : 99,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 100,
 				"parent" : 8
 			}
 		]
@@ -78,10 +85,17 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "OpenSSL::applink::@6890427a1f51a3e7e1df",
+	"id" : "CURL::nghttp3::@6890427a1f51a3e7e1df",
 	"imported" : true,
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 10,
+			"fragment" : "nghttp3"
+		}
+	],
 	"local" : true,
-	"name" : "OpenSSL::applink",
+	"name" : "CURL::nghttp3",
 	"paths" : 
 	{
 		"build" : ".",

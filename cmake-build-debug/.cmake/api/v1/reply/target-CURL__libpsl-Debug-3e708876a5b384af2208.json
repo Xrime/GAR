@@ -8,11 +8,12 @@
 			"add_library",
 			"find_package",
 			"__find_dependency_common",
-			"find_dependency"
+			"find_dependency",
+			"set_target_properties"
 		],
 		"files" : 
 		[
-			"C:/msys64/mingw64/share/cmake/Modules/FindOpenSSL.cmake",
+			"C:/msys64/mingw64/lib/cmake/CURL/FindLibpsl.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 			"C:/msys64/mingw64/lib/cmake/CURL/CURLConfig.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/FindCURL.cmake",
@@ -26,7 +27,7 @@
 			{
 				"command" : 1,
 				"file" : 4,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -46,7 +47,7 @@
 			{
 				"command" : 3,
 				"file" : 2,
-				"line" : 62,
+				"line" : 117,
 				"parent" : 4
 			},
 			{
@@ -68,7 +69,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 772,
+				"line" : 88,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 89,
 				"parent" : 8
 			}
 		]
@@ -78,15 +85,22 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "OpenSSL::Crypto::@6890427a1f51a3e7e1df",
+	"id" : "CURL::libpsl::@6890427a1f51a3e7e1df",
 	"imported" : true,
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 10,
+			"fragment" : "psl"
+		}
+	],
 	"local" : true,
-	"name" : "OpenSSL::Crypto",
+	"name" : "CURL::libpsl",
 	"paths" : 
 	{
 		"build" : ".",
 		"source" : "."
 	},
 	"sources" : [],
-	"type" : "UNKNOWN_LIBRARY"
+	"type" : "INTERFACE_LIBRARY"
 }

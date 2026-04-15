@@ -84,12 +84,12 @@ clean: CMakeFiles/GAR.dir/clean
 CMakeFiles/GAR.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target GAR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target GAR"
 .PHONY : CMakeFiles/GAR.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GAR.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/GAR.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/GAR.dir/rule
@@ -101,7 +101,7 @@ GAR: CMakeFiles/GAR.dir/rule
 # codegen rule for target.
 CMakeFiles/GAR.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Finished codegen for target GAR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target GAR"
 .PHONY : CMakeFiles/GAR.dir/codegen
 
 # clean rule for target.

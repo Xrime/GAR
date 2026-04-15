@@ -13,7 +13,7 @@
 		],
 		"files" : 
 		[
-			"C:/msys64/mingw64/lib/cmake/CURL/FindLibssh2.cmake",
+			"C:/msys64/mingw64/lib/cmake/CURL/FindBrotli.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 			"C:/msys64/mingw64/lib/cmake/CURL/CURLConfig.cmake",
 			"C:/msys64/mingw64/share/cmake/Modules/FindCURL.cmake",
@@ -27,7 +27,7 @@
 			{
 				"command" : 1,
 				"file" : 4,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -47,7 +47,7 @@
 			{
 				"command" : 3,
 				"file" : 2,
-				"line" : 129,
+				"line" : 89,
 				"parent" : 4
 			},
 			{
@@ -69,13 +69,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 99,
+				"line" : 92,
 				"parent" : 8
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 100,
+				"line" : 93,
 				"parent" : 8
 			}
 		]
@@ -85,17 +85,21 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "CURL::libssh2::@6890427a1f51a3e7e1df",
+	"id" : "CURL::brotli::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceLinkLibraries" : 
 	[
 		{
 			"backtrace" : 10,
-			"fragment" : "ssh2"
+			"fragment" : "brotlidec"
+		},
+		{
+			"backtrace" : 10,
+			"fragment" : "brotlicommon"
 		}
 	],
 	"local" : true,
-	"name" : "CURL::libssh2",
+	"name" : "CURL::brotli",
 	"paths" : 
 	{
 		"build" : ".",

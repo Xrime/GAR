@@ -23,7 +23,7 @@
 			{
 				"command" : 1,
 				"file" : 2,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -43,13 +43,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 68,
+				"line" : 77,
 				"parent" : 4
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 70,
+				"line" : 79,
 				"parent" : 4
 			}
 		]
@@ -59,17 +59,17 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "CURL::OpenSSL_Crypto::@6890427a1f51a3e7e1df",
+	"id" : "CURL::ZLIB::@6890427a1f51a3e7e1df",
 	"imported" : true,
 	"interfaceLinkLibraries" : 
 	[
 		{
 			"backtrace" : 6,
-			"fragment" : "C:/msys64/mingw64/lib/libcrypto.dll.a"
+			"fragment" : "C:/msys64/mingw64/lib/libz.dll.a"
 		}
 	],
 	"local" : true,
-	"name" : "CURL::OpenSSL_Crypto",
+	"name" : "CURL::ZLIB",
 	"paths" : 
 	{
 		"build" : ".",

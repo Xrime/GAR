@@ -128,6 +128,30 @@ GAR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
 .PHONY : GAR/fast
 
+src/anonymity/tor_connector.obj: src/anonymity/tor_connector.cpp.obj
+.PHONY : src/anonymity/tor_connector.obj
+
+# target to build an object file
+src/anonymity/tor_connector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj
+.PHONY : src/anonymity/tor_connector.cpp.obj
+
+src/anonymity/tor_connector.i: src/anonymity/tor_connector.cpp.i
+.PHONY : src/anonymity/tor_connector.i
+
+# target to preprocess a source file
+src/anonymity/tor_connector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.i
+.PHONY : src/anonymity/tor_connector.cpp.i
+
+src/anonymity/tor_connector.s: src/anonymity/tor_connector.cpp.s
+.PHONY : src/anonymity/tor_connector.s
+
+# target to generate assembly for a file
+src/anonymity/tor_connector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.s
+.PHONY : src/anonymity/tor_connector.cpp.s
+
 src/core/http_client.obj: src/core/http_client.cpp.obj
 .PHONY : src/core/http_client.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GAR
+	@echo ... src/anonymity/tor_connector.obj
+	@echo ... src/anonymity/tor_connector.i
+	@echo ... src/anonymity/tor_connector.s
 	@echo ... src/core/http_client.obj
 	@echo ... src/core/http_client.i
 	@echo ... src/core/http_client.s
