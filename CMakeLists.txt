@@ -9,11 +9,11 @@ find_package(CURL REQUIRED)
 
 add_executable(GAR
         src/main.cpp
-        cmake-build-debug/include/core/ihttp_transport.h
-        cmake-build-debug/include/core/http_client.h
+        include/core/ihttp_transport.h
+        include/core/http_client.h
         src/core/http_client.cpp
-        cmake-build-debug/include/core/http_request.h
-        cmake-build-debug/include/core/http_response.h
+        include/core/http_request.h
+        include/core/http_response.h
 )
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)

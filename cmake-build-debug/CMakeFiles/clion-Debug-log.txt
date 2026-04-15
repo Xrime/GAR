@@ -7,6 +7,6 @@ C:\msys64\mingw64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:
 -- Found NGHTTP3 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.15.0")
 -- Found NGTCP2 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "")
 -- Found Zstd (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.5.7")
--- Configuring done (1.6s)
--- Generating done (0.1s)
+-- Configuring done (6.2s)
+-- Generating done (0.3s)
 -- Build files have been written to: C:/Users/xint2/CLionProjects/GAR/cmake-build-debug

@@ -26,9 +26,9 @@ namespace gar::core {
     private:
         std::unique_ptr<IHttpTransport> transport_;
 
-        std::map<std::string, std::string> default_headders_;
+        std::map<std::string, std::string> default_headers_;
 
-        void validatorUrl(const std::string& url) const;
+        void validateUrl(const std::string& url) const;
         HttpRequest buildRequest(const std::string& url, const std::string& method);
     };
 

@@ -142,12 +142,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "cmake-build-debug/include/core/ihttp_transport.h",
+			"path" : "include/core/ihttp_transport.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "cmake-build-debug/include/core/http_client.h",
+			"path" : "include/core/http_client.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -158,12 +158,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "cmake-build-debug/include/core/http_request.h",
+			"path" : "include/core/http_request.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "cmake-build-debug/include/core/http_response.h",
+			"path" : "include/core/http_response.h",
 			"sourceGroupIndex" : 1
 		}
 	],
