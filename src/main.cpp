@@ -3,5 +3,5 @@
 
 
 int main() {
-    std::cout<<"hello worrld"<<std::endl;
+
 }

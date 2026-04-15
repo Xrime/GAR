@@ -9,7 +9,9 @@ find_package(CURL REQUIRED)
 
 add_executable(GAR
         src/main.cpp
-        src/core/ihttp_transport.hpp
+        cmake-build-debug/include/core/ihttp_transport.h
+        cmake-build-debug/include/core/http_client.h
+        src/core/http_client.cpp
 )
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)
