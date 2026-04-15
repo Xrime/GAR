@@ -12,6 +12,8 @@ add_executable(GAR
         cmake-build-debug/include/core/ihttp_transport.h
         cmake-build-debug/include/core/http_client.h
         src/core/http_client.cpp
+        cmake-build-debug/include/core/http_request.h
+        cmake-build-debug/include/core/http_response.h
 )
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)

@@ -1,0 +1,12 @@
+C:\msys64\mingw64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe -G "MinGW Makefiles" -S C:\Users\xint2\CLionProjects\GAR -B C:\Users\xint2\CLionProjects\GAR\cmake-build-debug
+-- Found Brotli (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.2.0")
+-- Found Libidn2 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "2.3.8")
+-- Found Libpsl (via pkg-config): C:/msys64/mingw64/bin/../include (found version "0.21.5")
+-- Found Libssh2 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.11.1")
+-- Found NGHTTP2 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.68.1")
+-- Found NGHTTP3 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.15.0")
+-- Found NGTCP2 (via pkg-config): C:/msys64/mingw64/bin/../include (found version "")
+-- Found Zstd (via pkg-config): C:/msys64/mingw64/bin/../include (found version "1.5.7")
+-- Configuring done (1.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/xint2/CLionProjects/GAR/cmake-build-debug
