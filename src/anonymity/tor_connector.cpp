@@ -122,8 +122,49 @@ namespace gar::anonymity {
         //checking response
         if (response[0] != 0x05 || response[1] != 0x00) {
             setError("Tor SOCK5 handshake failed");
-
+            #ifdef _WIN32
+                        closesocket(sock);
+            #else
+                        close();
+            #endif
+                        return false;
         }
+        std::cout << "Torconnector socks5 handshake is successfule"<<std::endl;
+        #ifdef _WIN32
+                closesocket(sock);
+        #else
+                close(sock);
+        #endif
+
+        is_connected_ =true;
+        last_error_="";
+        std::cout<<"..TorConnector.. Tor connection is verified"<<std::endl;
+        return true;
+
     }
+    //geting socks5 adr
+    std::string TorConnector::getSocks5Address() const {
+        std::stringstream ss;
+        ss<<socks5_host_<<":"<<socks5_port_;
+        return ss.str();
+    }
+
+    bool TorConnector::isConnected() const {
+        return is_connected_;
+    }
+    std::string TorConnector::gethost() const {
+        return socks5_host_;
+    }
+    int TorConnector::getPort() const {
+        return socks5_port_;
+    }
+    std::string TorConnector::getLastError() const {
+        return last_error_;
+    }
+    void TorConnector::setError(const std::string &error) {
+        last_error_ = error;
+        std::cerr<<"Torconnector error ::"<<error<<std::endl;
+    }
+
 
 }

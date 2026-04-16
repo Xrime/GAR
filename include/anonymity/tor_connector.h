@@ -18,6 +18,8 @@ namespace gar::anonymity {
         ~TorConnector();
 
         bool testconnection();
+        std::string getSocks5Address() const;
+        bool isConnected() const;
 
         std::string gethost() const;
         int getPort() const;

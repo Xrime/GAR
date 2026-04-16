@@ -1,6 +1,9 @@
 #include <iostream>
 #include <curl/curl.h>
 #include <string>
+#include <memory>
+#include "../include/anonymity/tor_manager.h"
+#include "../include/anonymity/tor_connector.h"
 
 
 void initializeTor() {
@@ -12,9 +15,39 @@ void startTerminalUI() {
 }
 
 int main() {
-    std::cout<<"==============================="<<std::endl;
-    std::cout<<"  GAR -Ghost Anonymous Router"<<std::endl;
-    std::cout<<"==============================="<<std::endl;
+    //welcome
+    std::cout << "\n";
+    std::cout << "╔════════════════════════════════════════════════════╗" << std::endl;
+    std::cout << "║            GAR - Ghost Anonymous Router            ║" << std::endl;
+    std::cout << "║                                                    ║" << std::endl;
+    std::cout << "╚════════════════════════════════════════════════════╝" << std::endl;
+    std::cout << "\n";
+
+    // //create Tor connector
+    // std::cout<<"{Main} Testing Tor connection..."<<std::endl;
+    // std::cout << "{Main} ";
+
+    std::cout<<"1: Starting embedded Tor...\n"<<std::endl;
+
+    auto tor_manager = std::make_unique<gar::anonymity::TorManager>();
+
+    if (!tor_manager->startTor()) {
+        std::cout<<"\n";
+        std::cout<<"Failed : Could not start Tor"<<std::endl;
+        std::cout<<"Error :"<<tor_manager ->getLastError()<<std::endl;
+        std::cout<<"\n";
+        std::cout<<"Troubleshooting:"<<std::endl;
+        std::cout<<"1. Check antivirus isn't blocking Tor"<<std::endl;
+        std::cout<<"\n";
+        return 1;
+    }
+    std::cout<<"\n";
+    std::cout<<"Tor started successfully!!!"<<std::endl;
+    std::cout<<"\n";
+
+
+    std::cout << "2: Connecting through Tor...\n"<<std::endl;
+
 
 
 

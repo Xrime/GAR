@@ -152,6 +152,30 @@ src/anonymity/tor_connector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.s
 .PHONY : src/anonymity/tor_connector.cpp.s
 
+src/anonymity/tor_manager.obj: src/anonymity/tor_manager.cpp.obj
+.PHONY : src/anonymity/tor_manager.obj
+
+# target to build an object file
+src/anonymity/tor_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj
+.PHONY : src/anonymity/tor_manager.cpp.obj
+
+src/anonymity/tor_manager.i: src/anonymity/tor_manager.cpp.i
+.PHONY : src/anonymity/tor_manager.i
+
+# target to preprocess a source file
+src/anonymity/tor_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.i
+.PHONY : src/anonymity/tor_manager.cpp.i
+
+src/anonymity/tor_manager.s: src/anonymity/tor_manager.cpp.s
+.PHONY : src/anonymity/tor_manager.s
+
+# target to generate assembly for a file
+src/anonymity/tor_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.s
+.PHONY : src/anonymity/tor_manager.cpp.s
+
 src/core/http_client.obj: src/core/http_client.cpp.obj
 .PHONY : src/core/http_client.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... src/anonymity/tor_connector.obj
 	@echo ... src/anonymity/tor_connector.i
 	@echo ... src/anonymity/tor_connector.s
+	@echo ... src/anonymity/tor_manager.obj
+	@echo ... src/anonymity/tor_manager.i
+	@echo ... src/anonymity/tor_manager.s
 	@echo ... src/core/http_client.obj
 	@echo ... src/core/http_client.i
 	@echo ... src/core/http_client.s
