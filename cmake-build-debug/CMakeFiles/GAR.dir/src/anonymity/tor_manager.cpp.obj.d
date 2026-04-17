@@ -218,12 +218,6 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/formatfwd.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/unicode.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/unicode-data.h \
- C:/msys64/mingw64/include/c++/15.2.0/set \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tree.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/node_handle.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_set.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_multiset.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/erase_if.h \
  C:/msys64/mingw64/include/c++/15.2.0/thread \
  C:/msys64/mingw64/include/c++/15.2.0/stop_token \
  C:/msys64/mingw64/include/c++/15.2.0/atomic \
@@ -233,6 +227,8 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/atomic_timed_wait.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/this_thread_sleep.h \
  C:/msys64/mingw64/include/semaphore.h \
+ C:/msys64/mingw64/include/winsock2.h \
+ C:/msys64/mingw64/include/_mingw_unicode.h \
  C:/msys64/mingw64/include/windows.h \
  C:/msys64/mingw64/include/sdkddkver.h C:/msys64/mingw64/include/excpt.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
@@ -244,9 +240,7 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: \
  C:/msys64/mingw64/include/specstrings.h C:/msys64/mingw64/include/sal.h \
  C:/msys64/mingw64/include/concurrencysal.h \
  C:/msys64/mingw64/include/driverspecs.h \
- C:/msys64/mingw64/include/winnt.h \
- C:/msys64/mingw64/include/_mingw_unicode.h \
- C:/msys64/mingw64/include/apiset.h \
+ C:/msys64/mingw64/include/winnt.h C:/msys64/mingw64/include/apiset.h \
  C:/msys64/mingw64/include/psdk_inc/intrin-impl.h \
  C:/msys64/mingw64/include/basetsd.h C:/msys64/mingw64/include/guiddef.h \
  C:/msys64/mingw64/include/string.h \
@@ -435,22 +429,13 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: \
  C:/msys64/mingw64/include/rpcnterr.h \
  C:/msys64/mingw64/include/rpcasync.h \
  C:/msys64/mingw64/include/shellapi.h C:/msys64/mingw64/include/winperf.h \
- C:/msys64/mingw64/include/winsock.h \
- C:/msys64/mingw64/include/_bsd_types.h \
- C:/msys64/mingw64/include/inaddr.h \
- C:/msys64/mingw64/include/psdk_inc/_socket_types.h \
- C:/msys64/mingw64/include/psdk_inc/_fd_types.h \
- C:/msys64/mingw64/include/psdk_inc/_ip_types.h \
- C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h \
- C:/msys64/mingw64/include/psdk_inc/_wsadata.h \
- C:/msys64/mingw64/include/psdk_inc/_xmitfile.h \
- C:/msys64/mingw64/include/psdk_inc/_wsa_errnos.h \
- C:/msys64/mingw64/include/wincrypt.h C:/msys64/mingw64/include/bcrypt.h \
- C:/msys64/mingw64/include/ncrypt.h C:/msys64/mingw64/include/dpapi.h \
- C:/msys64/mingw64/include/winefs.h C:/msys64/mingw64/include/winscard.h \
- C:/msys64/mingw64/include/wtypes.h C:/msys64/mingw64/include/rpcndr.h \
- C:/msys64/mingw64/include/rpcnsip.h C:/msys64/mingw64/include/rpcsal.h \
- C:/msys64/mingw64/include/ole2.h C:/msys64/mingw64/include/objbase.h \
+ C:/msys64/mingw64/include/winsock.h C:/msys64/mingw64/include/wincrypt.h \
+ C:/msys64/mingw64/include/bcrypt.h C:/msys64/mingw64/include/ncrypt.h \
+ C:/msys64/mingw64/include/dpapi.h C:/msys64/mingw64/include/winefs.h \
+ C:/msys64/mingw64/include/winscard.h C:/msys64/mingw64/include/wtypes.h \
+ C:/msys64/mingw64/include/rpcndr.h C:/msys64/mingw64/include/rpcnsip.h \
+ C:/msys64/mingw64/include/rpcsal.h C:/msys64/mingw64/include/ole2.h \
+ C:/msys64/mingw64/include/objbase.h \
  C:/msys64/mingw64/include/combaseapi.h \
  C:/msys64/mingw64/include/wtypesbase.h \
  C:/msys64/mingw64/include/unknwnbase.h \
@@ -465,9 +450,17 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: \
  C:/msys64/mingw64/include/commdlg.h C:/msys64/mingw64/include/stralign.h \
  C:/msys64/mingw64/include/sec_api/stralign_s.h \
  C:/msys64/mingw64/include/winsvc.h C:/msys64/mingw64/include/mcx.h \
- C:/msys64/mingw64/include/imm.h C:/msys64/mingw64/include/winsock2.h \
+ C:/msys64/mingw64/include/imm.h \
  C:/msys64/mingw64/include/psdk_inc/_ws1_undef.h \
- C:/msys64/mingw64/include/ws2def.h C:/msys64/mingw64/include/qos.h \
- C:/msys64/mingw64/include/ws2tcpip.h \
+ C:/msys64/mingw64/include/_bsd_types.h \
+ C:/msys64/mingw64/include/inaddr.h \
+ C:/msys64/mingw64/include/psdk_inc/_socket_types.h \
+ C:/msys64/mingw64/include/psdk_inc/_fd_types.h \
+ C:/msys64/mingw64/include/psdk_inc/_ip_types.h \
+ C:/msys64/mingw64/include/psdk_inc/_wsadata.h \
+ C:/msys64/mingw64/include/ws2def.h \
+ C:/msys64/mingw64/include/psdk_inc/_wsa_errnos.h \
+ C:/msys64/mingw64/include/qos.h C:/msys64/mingw64/include/ws2tcpip.h \
  C:/msys64/mingw64/include/ws2ipdef.h C:/msys64/mingw64/include/in6addr.h \
+ C:/msys64/mingw64/include/psdk_inc/_ip_mreq1.h \
  C:/msys64/mingw64/include/mstcpip.h

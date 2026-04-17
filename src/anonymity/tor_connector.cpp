@@ -9,7 +9,6 @@
 #ifdef _WIN32
     #include <winsock2.h>
     #include <ws2tcpip.h>
-    #pragma comment(lib, "ws2_32.lib")
 #else
     #include <sys/socket.h>
     #include <netinet/in.h>
@@ -27,41 +26,40 @@ namespace gar::anonymity {
 
     {
         std::cout <<"[TorConnector] created with"<< socks5_host<<":"<<socks5_port<<std::endl;
-        #ifdef _WIN32
-            WSADATA wsa_data;
-            int result = WSAStartup(MAKEWORD(2,2), &wsa_data);
-            if (result !=0) {
-                setError("wsastartup failed");
-                std::cerr<<"[Torconnector] wsastartup error :"<<result<<std::endl;
-            }
-        #endif
 
     }
     TorConnector::~TorConnector() {
         std::cout<<"Torconnection is distroy"<<std::endl;
-        #ifdef _WIN32
-            WSACleanup();
-        #endif
+
     }
 
     bool TorConnector::testconnection() {
         std::cout<<"TorConnector :testing connection to ..."<<socks5_host_<<":"<<socks5_port_<<std::endl;
-
-        SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
         #ifdef _WIN32
-            if (sock== INVALID_SOCKET) {
-                setError("Failed to connect");
-                return false;
-            }
-        #else
-            if (sock < 0) {
-                setError("Failed to create socket");
-                return false;
-            }
+                WSADATA wsa_data;
+                int wsa_result = WSAStartup(MAKEWORD(2, 2), &wsa_data);
+
+                if (wsa_result != 0) {
+                    setError("WSAStartup failed");
+                    std::cout << "[TorConnector] WSAStartup failed with error: " << wsa_result << std::endl;
+                    return false;
+                }
+                std::cout << "[TorConnector] WSAStartup successful" << std::endl;
         #endif
+        SOCKET sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+        if (sock== INVALID_SOCKET) {
+            setError("Failed to connect");
+            #ifdef _WIN32
+                        WSACleanup();
+            #endif
+                        return false;
+                    }
 
 
-        struct sockaddr_in tor_addr;
+        std::cout<<"Tor socket created"<<std::endl;
+
+
+        struct sockaddr_in tor_addr={};
         tor_addr.sin_family=AF_INET;
         tor_addr.sin_port= htons(socks5_port_);
 
@@ -70,13 +68,14 @@ namespace gar::anonymity {
             setError("Invalid tor address");
             #ifdef _WIN32
                 closesocket(sock);
+                WSACleanup();
             #else
                 close(sock)
             #endif
             return false;
 
         }
-        std::cout <<"Torconnector Attempting connection..."<< std::endl;
+        std::cout <<"Torconnector Attempting connection..."<<socks5_host_<<": "<<socks5_port_<<std::endl;
         int connect_result = connect(sock, (struct sockaddr*)&tor_addr, sizeof(tor_addr));
 
         #ifdef _WIN32
@@ -85,6 +84,7 @@ namespace gar::anonymity {
                 setError("connection failed");
                 std::cerr<<"Torconnector connection error"<<error<<std::endl;
                 closesocket(sock);
+                WSACleanup();
                 return false;
         }
         #else
@@ -94,7 +94,7 @@ namespace gar::anonymity {
                 return false;
             }
         #endif
-                std::cout << "TorConnector connected to tor SOCK5!!!" << std::endl;
+        std::cout << "TorConnector connected to tor SOCK5!!!" << std::endl;
         unsigned char handshake[]= {0x05, 0x01 , 0x00};
 
         int send_result = send(sock, (const char*)handshake, 3,0);
@@ -102,10 +102,11 @@ namespace gar::anonymity {
             setError("Failed to send handshake");
             #ifdef _WIN32
                         closesocket(sock);
+                        WSACleanup();
             #else
                         close(sock);
             #endif
-                        return false;
+            return false;
         }
         std::cout<<"Tor connection send handshake.... "<<std::endl;
         unsigned char response[2];
@@ -114,6 +115,7 @@ namespace gar::anonymity {
             setError("Failed to recieve handshake responce");
             #ifdef _WIN32
                         closesocket(sock);
+                        WSACleanup();
             #else
                         close(sock);
             #endif
@@ -124,6 +126,7 @@ namespace gar::anonymity {
             setError("Tor SOCK5 handshake failed");
             #ifdef _WIN32
                         closesocket(sock);
+                        WSACleanup();
             #else
                         close();
             #endif
@@ -132,6 +135,7 @@ namespace gar::anonymity {
         std::cout << "Torconnector socks5 handshake is successfule"<<std::endl;
         #ifdef _WIN32
                 closesocket(sock);
+                WSACleanup();
         #else
                 close(sock);
         #endif
@@ -152,12 +156,12 @@ namespace gar::anonymity {
     bool TorConnector::isConnected() const {
         return is_connected_;
     }
-    std::string TorConnector::gethost() const {
-        return socks5_host_;
-    }
-    int TorConnector::getPort() const {
-        return socks5_port_;
-    }
+    // std::string TorConnector::gethost() const {
+    //     return socks5_host_;
+    // }
+    // int TorConnector::getPort() const {
+    //     return socks5_port_;
+    // }
     std::string TorConnector::getLastError() const {
         return last_error_;
     }

@@ -30,9 +30,11 @@ namespace gar::anonymity {
         bool is_running;
         std::string last_error_;
         std::string findTorExecutable();
-        bool verifyTorIsRunnig();
+        bool verifyTorIsRunning();
 
         void setError(const std::string& error);
+
+        std::string findTorrcFile();
 
     };
 }

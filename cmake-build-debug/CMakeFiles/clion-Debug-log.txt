@@ -11,7 +11,8 @@ C:\msys64\mingw64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:
 --   CMake Version: 4.3.1
 --   C++ Standard: 20
 --   Build Type: Debug
---   Source Dir: C:/Users/xint2/CLionProjects/GAR
--- Configuring done (0.5s)
--- Generating done (0.1s)
+--   Platform: Windows
+--   Linking: CURL + ws2_32 (Windows sockets)
+-- Configuring done (2.8s)
+-- Generating done (0.5s)
 -- Build files have been written to: C:/Users/xint2/CLionProjects/GAR/cmake-build-debug

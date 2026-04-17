@@ -4,7 +4,7 @@
 # compile CXX with C:/msys64/mingw64/bin/g++.exe
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = @CMakeFiles/GAR.dir/includes_CXX.rsp
 
 CXX_FLAGS =  -Wall -Wextra -Wpedantic -g -std=gnu++20 -fdiagnostics-color=always
 

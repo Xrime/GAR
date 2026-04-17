@@ -1,0 +1,222 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::OpenSSL_Crypto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__OpenSSL_Crypto-Debug-725e2c48a37fd3c0d3d9.json",
+					"name" : "CURL::OpenSSL_Crypto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::ZLIB::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__ZLIB-Debug-5de2dc115a6fa168e59d.json",
+					"name" : "CURL::ZLIB",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::brotli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__brotli-Debug-b554900dc4142792a377.json",
+					"name" : "CURL::brotli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::curl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__curl-Debug-c6a9cea17dff1043aebd.json",
+					"name" : "CURL::curl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::libcurl_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__libcurl_shared-Debug-9da622c96e320db7eb25.json",
+					"name" : "CURL::libcurl_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::libidn2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__libidn2-Debug-9ad9ddda776b2a73ba2f.json",
+					"name" : "CURL::libidn2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::libpsl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__libpsl-Debug-0c93432bb394cc0994c9.json",
+					"name" : "CURL::libpsl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::libssh2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__libssh2-Debug-5687b8c0d6aa279ec84e.json",
+					"name" : "CURL::libssh2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::nghttp2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__nghttp2-Debug-aa55757438574825aea0.json",
+					"name" : "CURL::nghttp2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::nghttp3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__nghttp3-Debug-381f33bf32bc9d48cfa4.json",
+					"name" : "CURL::nghttp3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::ngtcp2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__ngtcp2-Debug-aae60d231beeb58baccc.json",
+					"name" : "CURL::ngtcp2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::win32_winsock::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__win32_winsock-Debug-acb9dd9b9a7638efb28a.json",
+					"name" : "CURL::win32_winsock",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CURL::zstd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CURL__zstd-Debug-86d2bf08f345122ff3ed.json",
+					"name" : "CURL::zstd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenSSL::Crypto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenSSL__Crypto-Debug-932a665e2a996ef471b0.json",
+					"name" : "OpenSSL::Crypto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenSSL::SSL::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenSSL__SSL-Debug-f29a13dfd7de32e2a419.json",
+					"name" : "OpenSSL::SSL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OpenSSL::applink::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OpenSSL__applink-Debug-7a9232e3cfefdbe735fa.json",
+					"name" : "OpenSSL::applink",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZLIB::ZLIB::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZLIB__ZLIB-Debug-d82ae22daa1c2a09af8b.json",
+					"name" : "ZLIB::ZLIB",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					],
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "GAR",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "GAR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GAR-Debug-87292f5edfa0c4697df7.json",
+					"name" : "GAR",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/xint2/CLionProjects/GAR/cmake-build-debug",
+		"source" : "C:/Users/xint2/CLionProjects/GAR"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	}
+}
