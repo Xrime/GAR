@@ -7,6 +7,7 @@
 
 #include <string>
 #include <memory>
+#include <psdk_inc/_socket_types.h>
 
 namespace gar::anonymity {
     class TorConnector {
@@ -34,6 +35,7 @@ namespace gar::anonymity {
 
         bool checkTorResponds();
         void setError(const std::string& error);
+        void winCleanUP(SOCKET sock);
     };
 }
 
