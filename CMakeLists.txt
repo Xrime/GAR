@@ -21,7 +21,6 @@ target_link_libraries(GAR PRIVATE CURL::libcurl)
 
 if(WIN32)
     target_link_libraries(GAR PRIVATE ws2_32)
-
 endif ()
 
 # Add this near your other target settings

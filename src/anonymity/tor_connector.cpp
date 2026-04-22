@@ -2,7 +2,7 @@
 // Created by xint2 on 15/04/2026.
 //
 
-#include "../../include/anonymity/tor_connector.h"
+
 #include <iostream>
 #include <sstream>
 
@@ -15,6 +15,7 @@
     #include <arpa/inet.h>
     #include <unistd.h>
 #endif
+#include "../../include/anonymity/tor_connector.h"
 
 namespace gar::anonymity {
 

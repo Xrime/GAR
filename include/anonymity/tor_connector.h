@@ -7,6 +7,7 @@
 
 #include <string>
 #include <memory>
+#include <windows.h>
 #include <psdk_inc/_socket_types.h>
 
 namespace gar::anonymity {
