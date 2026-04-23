@@ -293,10 +293,10 @@ namespace gar::core {
         connect_cmd.push_back(0x01);
         connect_cmd.push_back(0x00);
         connect_cmd.push_back(0x03);
-        connect_cmd.push_back(host.length());
+        connect_cmd.push_back((unsigned char)host.length());
 
         for (char c: host) {
-            connect_cmd.push_back(c);
+            connect_cmd.push_back((unsigned char )c);
         }
 
 
@@ -307,55 +307,48 @@ namespace gar::core {
         connect_cmd.push_back((port >>8)  & 0xFF);
         connect_cmd.push_back(port & 0xFF);
 
-        int connect_send = send(sock , (const char*)connect_cmd.data(), connect_cmd.size(),0);
-
-        if (connect_send != (int)connect_cmd.size()) {
-            seterror("Failed to send SOCKS5 connect command");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
-
-            response.error_message = last_error;
-            return response;
-        }
+        bool connect_ok = false;
         unsigned char connect_response[10] = {0};
-        int connect_recv = recv(sock, (char*)connect_response, 10,0);
 
-        std::cout << "[HttpClient] SOCKS5 CONNECT response received: " << connect_recv << " bytes" << std::endl;
-        std::cout << "[HttpClient] Response byte 0: 0x" << std::hex << (int)connect_response[0] << std::dec << std::endl;
-        std::cout << "[HttpClient] Response byte 1: 0x" << std::hex << (int)connect_response[1] << std::dec << std::endl;
+        for (int attempt =1; attempt<=5;attempt++) {
+            int connect_send = send(sock , (const char*)connect_cmd.data(), connect_cmd.size(),0);
+
+            if (connect_send != (int)connect_cmd.size()) {
+                seterror("Failed to send SOCKS5 connect command");
+                break;
+            }
+
+            int connect_recv = recv(sock, (char*)connect_response, 10,0);
+            std::cout << "HttpClient SOCKS5 attempt: " << attempt << std::endl;
+            std::cout << "HttpClient connect recv bytes"<< connect_recv << std::endl;
 
 
-        if (connect_recv<2) {
-            seterror("Failed to receive sock5s connect response");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
+            if (connect_recv>=2) {
+                std::cout << "[HttpClient] Response byte 0: 0x" << std::hex << (int)connect_response[0] << std::dec << std::endl;
+                std::cout << "[HttpClient] Response byte 1: 0x" << std::hex << (int)connect_response[1] << std::dec << std::endl;
 
-            response.error_message =last_error;
-            return response;
+            }
+            if (connect_recv >= 2 && connect_response[0] ==0x05 && connect_response[1]==0x00) {
+                connect_ok =true;
+                break;
+            }
+            if (!connect_ok) {
+                seterror("SOCKS CONNECT failed after retries");
+                #ifdef _WIN32
+                                closesocket(sock);
+                                WSACleanup();
+                #else
+                                close(sock);
+                #endif
+
+                response.error_message =last_error;
+                return response;
+
+            }
+
 
         }
-        if (connect_response[0] != 0x05 || connect_response[1]  !=0x00) {
-            seterror(" socks connect failed - server not reachable through Tor");
-            std::cout << "[HttpClient] Expected: 0x05 0x00, Got: 0x" << std::hex << (int)connect_response[0]
-              << " 0x" << (int)connect_response[1] << std::dec << std::endl;
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
 
-            response.error_message =last_error;
-            return response;
-        }
         //building http request string
         std::stringstream http_request;
         http_request << request.method << " " << path << " HTTP/1.1\r\n";
@@ -489,33 +482,6 @@ namespace gar::core {
         }
     }
 
-
-
-
-
-
-    // HttpResponse HttpClient::post(const std::string &url, const std::string &body, const std::map<std::string, std::string> &headers) {
-    //     if (url.empty()) {
-    //         return {
-    //             500,
-    //             "Error","",{},false,"URL is empty"
-    //         };
-    //     }
-    //
-    //     HttpRequest request;
-    //     request.url = url;
-    //     request.method="POST";
-    //     request.body = body;
-    //
-    //     for (const auto& [key, value] : headers) {
-    //         request.headers[key] =value;
-    //     }
-    //
-    //     for (const auto& [key , value]: headers) {
-    //         if (request.headers.find(key)==request.headers.end()) {
-    //             request.headers[key] =value;
-    //         }
-    //     }
 
 
 }
