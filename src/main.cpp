@@ -74,10 +74,10 @@ int main() {
     gar::core::HttpClient http_client("127.0.0.1", 9050);
 
     std::vector<std::string> test_urls = {
-         "http://httpbin.org/get",
-         "http://ipv4.icanhazip.com/",
-        "http://www.google.com",
-        "http://example.com"
+        "https://www.google.com",
+         "https://httpbin.org/get"
+        //  "http://ipv4.icanhazip.com/",
+        // "http://example.com"
     };
 
     for (const auto& url : test_urls) {

@@ -9,6 +9,8 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <random>
+#include <curl/curl.h>
 #ifdef _WIN32
     #include <winsock2.h>
     #include <ws2tcpip.h>
@@ -20,6 +22,36 @@
 #endif
 
 
+// static std::string socks5_reply_totext(unsigned char rep) {
+//     switch (rep) {
+//         case 0x00: return "success";
+//         case 0x01: return "socks server failure";
+//         case 0x02: return "connection not allowed";
+//         case 0x03: return "network not reachable";
+//         case 0x04: return "host not reachable";
+//         case 0x05: return "connection refused by the host";
+//         case 0x06: return "TLL expired";
+//         case 0x07: return "command not supported";
+//         case 0x08: return "address type not surported";
+//         default: return "Unknown socks5 error";
+//     }
+// }
+static void close_socket (SOCKET sock) {
+#ifdef _WIN32
+    closesocket(sock);
+    WSACleanup();
+#else
+    close(sock);
+#endif
+
+}
+
+static size_t write_callback(void* contents, size_t size, size_t num_ofmeb, void* userp) {
+    size_t total = size * num_ofmeb;
+    std::string* out = (std::string*)userp;
+    out ->append((char*)contents, total);
+    return total;
+}
 
 namespace gar::core {
     HttpClient::HttpClient(const std::string &socks5_host, int socks5_port)
@@ -175,6 +207,8 @@ namespace gar::core {
         std::string host, path;
         int port;
 
+
+
         if (!parseurl(request.url, host, path, port)) {
             response.error_message = last_error;
             return response;
@@ -206,21 +240,71 @@ namespace gar::core {
                 }
         #endif
 
+        if (port == 443) {
+            CURL* curl =curl_easy_init();
+            if (!curl) {
+                seterror("Fail to initialize curl for https");
+                response.error_message =last_error;
+                return response;
+            }
+            std::string response_data;
+            std::string proxy =socks5Host +":" +std::to_string(socks5Port);
+
+            curl_easy_setopt(curl , CURLOPT_URL, request.url.c_str());
+            curl_easy_setopt(curl, CURLOPT_PROXY, proxy.c_str());
+            curl_easy_setopt(curl, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
+            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+            curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
+            curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+            curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
+
+            curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
+            curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
+
+            struct curl_slist* curl_headers = nullptr;
+            for (const auto& h : request.headers) {
+                std::string line = h.first + ":"+ h.second;
+                curl_headers = curl_slist_append(curl_headers, line.c_str());
+            }
+            if (curl_headers) {
+                curl_easy_setopt(curl, CURLOPT_HTTPHEADER, curl_headers);
+            }
+            CURLcode res = curl_easy_perform(curl);
+            std::cout << "[HTTPS] Proxy = " << proxy << std::endl;
+
+            if (res != CURLE_OK) {
+                seterror(std::string("Https request failed ") +  curl_easy_strerror(res));
+                response.error_message = last_error;
+                if (curl_headers) curl_slist_free_all(curl_headers);
+                curl_easy_cleanup(curl);
+                return response;
+            }
+            long code = 0;
+            curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &code);
+
+            response.success =true;
+            response.status_code=(int)code;
+            response.status_message="ok";
+            response.body = response_data;
+
+            if (curl_headers) {
+                curl_slist_free_all(curl_headers);
+            }
+            curl_easy_cleanup(curl);
+
+            std::cout<<"Https connectedr"<<std::endl;
+            return response;
+        }
         struct sockaddr_in socks5_addr ={};
         socks5_addr.sin_family = AF_INET;
         socks5_addr.sin_port = htons(socks5Port);
         int addr_result = inet_pton(AF_INET, socks5Host.c_str(),&socks5_addr.sin_addr);
 
+
+
         if (addr_result <= 0) {
             seterror("Wrong SOCK5 address");
-
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
-
+            close_socket(sock);
             response.error_message = last_error;
             return response;
 
@@ -248,12 +332,7 @@ namespace gar::core {
         int handshake_send =send(sock, (const char*)socks5_handshake,3,0);
         if (handshake_send != 3) {
             seterror("Failed to send SOCKS5 handshake");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
+            close_socket(sock);
             response.error_message = last_error;
             return response;
         }
@@ -263,24 +342,14 @@ namespace gar::core {
 
         if (receive_result !=2) {
             seterror("Unable to receive SOCKS5 response");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
+            close_socket(sock);
 
             response.error_message = last_error;
             return response;
         }
         if (socks5_response[0] != 0x05 || socks5_response[1] !=0x00) {
             seterror("SOCKS HANDSHAKE FAILED!");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
+            close_socket(sock);
             response.error_message= last_error;
             return response;
 
@@ -334,12 +403,7 @@ namespace gar::core {
             }
             if (!connect_ok) {
                 seterror("SOCKS CONNECT failed after retries");
-                #ifdef _WIN32
-                                closesocket(sock);
-                                WSACleanup();
-                #else
-                                close(sock);
-                #endif
+                close_socket(sock);
 
                 response.error_message =last_error;
                 return response;
@@ -366,12 +430,7 @@ namespace gar::core {
 
         if (http_send <= 0) {
             seterror("Failed to send http request");
-            #ifdef _WIN32
-                        closesocket(sock);
-                        WSACleanup();
-            #else
-                        close(sock);
-            #endif
+            close_socket(sock);
 
             response.error_message =last_error;
             return response;
@@ -393,12 +452,7 @@ namespace gar::core {
                 headers_found =  true;
             }
         }
-        #ifdef _WIN32
-                closesocket(sock);
-                WSACleanup();
-        #else
-                close(sock);
-        #endif
+        close_socket(sock);
 
         size_t headers_end =full_response.find("\r\n\r\n");
         if (headers_end == std::string::npos) {
