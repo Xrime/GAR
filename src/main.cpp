@@ -4,6 +4,7 @@
 #include <memory>
 #include "../include/anonymity/tor_manager.h"
 #include "../include/anonymity/tor_connector.h"
+#include "../include/ui/terminal_ui.h"
 #include "core/http_client.h"
 #include <vector>
 #include  <thread>
@@ -73,94 +74,56 @@ int main() {
 
     gar::core::HttpClient http_client("127.0.0.1", 9050);
 
-    std::vector<std::string> test_urls = {
-        "https://www.google.com",
-         "https://httpbin.org/get"
-        //  "http://ipv4.icanhazip.com/",
-        // "http://example.com"
-    };
+    gar::terminal_ui::TerminalUI ui(http_client);
+    ui.run();
 
-    for (const auto& url : test_urls) {
-        std::cout << "Testing: " << url << std::endl;
-
-        gar::core::HttpResponse response = http_client.get(url);
-
-        if (response.success) {
-            std::cout << " SUCCESS!" << std::endl;
-            std::cout << "Status: " << response.status_code << std::endl;
-            std::cout << "Body size: " << response.body.length() << " bytes" << std::endl;
-
-            if (response.body.length() > 0) {
-                std::string preview = response.body.substr(0, 50);
-                std::cout << "Preview: " << preview << "..." << std::endl;
-            }
-            break;  // Found a working URL!
-        } else {
-            std::cout << " FAILED - " << response.error_message << std::endl;
-        }
-
-    // std::cout<<"Making an httprequest..."<<std::endl<<std::endl;
+    // std::vector<std::string> test_urls = {
+    //     "https://api.ipify.org"
+    //     // "https://www.google.com"
+    //      // "https://httpbin.org/get"
+    //     //  "http://ipv4.icanhazip.com/",
+    //     // "http://example.com"
+    // };
     //
-    // gar::core::HttpClient http_client("127.0.0.1", 9050);
-
-    // std::cout<<"Requesting to example.com"<<std::endl;
+    // std::string url= "https://httpbin.org/get";
     //
-    // gar::core::HttpResponse response1 =http_client.get("http:example.com");
-    // if (response1.success) {
-    //     std::cout<<"request successful"<<std::endl;
-    //     std::cout<<"Status"<<response1.status_code<<" "<<response1.status_message<<std::endl;
-    //     std::cout<<"Response size:"<<response1.body.length()<<"bytes"<<std::endl;
+    // std::cout << "Testing: " <<  url << std::endl;
     //
-    //     if (response1.body.length()>0) {
-    //         std::string preview = response1.body.substr(0,100);
-    //         for (char c :preview) {
-    //             if (c =='\n' || c=='r') {
-    //                 std::cout<<" ";
+    // gar::core::HttpResponse response = http_client.get(url);
     //
-    //             }else {
-    //                 std::cout<<c;
-    //             }
-    //         }
-    //     } else
-    //     {
-    //         std::cout<<"request failed"<<std::endl;
-    //         std::cout<< "Error: "<<response1.error_message<<"\n"<<std::endl;
+    // if (response.success) {
+    //     std::cout << " SUCCESS!" << std::endl;
+    //     std::cout << "Status: " << response.status_code << std::endl;
+    //     std::cout << "Body size: " << response.body.length() << " bytes" << std::endl;
+    //
+    //     if (response.body.length() > 0) {
+    //         std::string preview = response.body.substr(0, 50);
+    //         std::cout << "Preview: " << preview << "..." << std::endl;
     //     }
-    //     std::cout<<"Checking IP address through Tor"<<std::endl;
-
-    // gar::core::HttpResponse response2 =http_client.get("http://icanhazip.com");
-    //
-    // if (response2.success) {
-    //     std::cout<<"IP check successful!"<<std::endl;
-    //     std::cout<<"Your IP through tor :"<<response2.body<<std::endl;
     // }else {
-    //     std::cout<<"Error : "<<response2.error_message<<"\n"<<std::endl;
+    //         std::cout << " FAILED - " << response.error_message << std::endl;
+    //     }
+    // gar::core::HttpRequest post_request;
+    // post_request.url = "https://httpbin.org/post";
+    // post_request.method ="POST";
+    // post_request.headers["HOST"] = "httpbin.org";
+    // post_request.headers["User-Agent"] = "GAR";
+    // post_request.headers["Accept"] = "*/*";
+    // post_request.headers["Connection"]="close";
+    // post_request.headers["Content-types"] = "application/json";
+    // post_request.body = "{\"name\":\"gar\",\"mode\":\"tor\"}";;
     //
-    // }
-    // std::map<std::string, std::string> post_headers;
-    // post_headers["Content-type"] = "application/x-www-form-urlencoded";
-
-    // gar::core::HttpResponse response3 = http_client.post(
-    //     "http://httpbin.org/post",
-    //     "username=test&password=secret",post_headers);
-    //
-    // if (response3.success) {
-    //     std::cout<<"Status: "<<response3.status_code<<" "<<response3.status_message<<std::endl;
-    //     std::cout<<"response size "<<response3.body.length()<<"bytes"<<std::endl;
+    // gar::core::HttpResponse post_response= http_client.performRequest(post_request);
+    // if (post_response.success) {
+    //     std::cout<<"Status: "<<post_response.status_code<<std::endl;
+    //     std::cout<<"POST preview"<<post_response.body.substr(0,120)<< std::endl;
     // }else {
-    //     std::cout<<"Error"<<response3.error_message<<std::endl;
+    //     std::cout<<"POST failed "<<post_response.error_message<<std::endl;
     // }
+
     std::cout << "====================================================" << std::endl;
     std::cout << " GAR is running with Tor successfully!" << std::endl;
     std::cout << "====================================================" << std::endl;
     std::cout<<"\n";
-}
     return 0;
 }
-
-    //
-    // initializeTor();
-    //
-    // startTerminalUI();
-    // std::cout<<"GAR Shutting Down..."<<std::endl;
-    // return 0;

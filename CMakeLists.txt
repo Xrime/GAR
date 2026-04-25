@@ -15,6 +15,8 @@ add_executable(GAR
         src/core/http_client.cpp
         src/anonymity/tor_connector.cpp
         src/anonymity/tor_manager.cpp
+        include/ui/terminal_ui.h
+        src/ui/terminal_ui.cpp
 )
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)

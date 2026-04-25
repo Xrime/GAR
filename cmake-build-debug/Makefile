@@ -224,6 +224,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/ui/terminal_ui.obj: src/ui/terminal_ui.cpp.obj
+.PHONY : src/ui/terminal_ui.obj
+
+# target to build an object file
+src/ui/terminal_ui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj
+.PHONY : src/ui/terminal_ui.cpp.obj
+
+src/ui/terminal_ui.i: src/ui/terminal_ui.cpp.i
+.PHONY : src/ui/terminal_ui.i
+
+# target to preprocess a source file
+src/ui/terminal_ui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.i
+.PHONY : src/ui/terminal_ui.cpp.i
+
+src/ui/terminal_ui.s: src/ui/terminal_ui.cpp.s
+.PHONY : src/ui/terminal_ui.s
+
+# target to generate assembly for a file
+src/ui/terminal_ui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s
+.PHONY : src/ui/terminal_ui.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -245,6 +269,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/ui/terminal_ui.obj
+	@echo ... src/ui/terminal_ui.i
+	@echo ... src/ui/terminal_ui.s
 .PHONY : help
 
 

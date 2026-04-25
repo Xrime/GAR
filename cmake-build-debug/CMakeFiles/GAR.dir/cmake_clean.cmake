@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/main.cpp.obj"
   "CMakeFiles/GAR.dir/src/main.cpp.obj.d"
+  "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj"
+  "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj.d"
   "GAR.exe"
   "GAR.exe.manifest"
   "GAR.pdb"

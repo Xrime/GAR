@@ -13,6 +13,7 @@ namespace gar::core {
     class HttpClient {
     public:
         HttpClient(const std::string& socks5_host = "127.0.0.1", int socks5_port= 9050);
+        HttpResponse performRequest(const HttpRequest& request);
 
         ~HttpClient();
 
@@ -37,7 +38,7 @@ namespace gar::core {
         // void validateUrl(const std::string& url) const; // I replace with parseurl
         bool parseurl(const std::string& url, std::string& host, std::string& path, int& port);
         HttpRequest buildRequest(const std::string& url, const std::string& method, const std::string& body = "");
-        HttpResponse performRequest(const HttpRequest& request);
+
 
         void seterror(const std::string& error);
     };

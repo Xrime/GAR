@@ -86,10 +86,6 @@ namespace gar::core {
         HttpRequest request =buildRequest(url, "GET");
         return performRequest(request);
 
-        // for (const auto& header : headers) {
-        //     request.headers[header.first] =header.second;
-        // }
-        // return performRequest(request);
         }
     HttpResponse HttpClient::post(const std::string &url, const std::string &body, const std::map<std::string, std::string> &headers) {
         if (url.empty()) {
@@ -269,6 +265,12 @@ namespace gar::core {
             if (curl_headers) {
                 curl_easy_setopt(curl, CURLOPT_HTTPHEADER, curl_headers);
             }
+
+            if (request.method== "POST") {
+                curl_easy_setopt(curl, CURLOPT_POST, 1L);
+                curl_easy_setopt(curl, CURLOPT_POSTFIELDS,request.body.c_str());
+                curl_easy_setopt(curl,CURLOPT_POSTFIELDSIZE, request.body.size());
+            }
             CURLcode res = curl_easy_perform(curl);
             std::cout << "[HTTPS] Proxy = " << proxy << std::endl;
 
@@ -417,11 +419,22 @@ namespace gar::core {
         std::stringstream http_request;
         http_request << request.method << " " << path << " HTTP/1.1\r\n";
 
+        bool has_content_type = false;
+
         for (const auto& header : request.headers) {
             http_request << header.first << ":" << header.second<<"\r\n";
+            if (header.first == "Content-Type") {
+                has_content_type =true;
+                break;
+            }
+        }
+        if (request.method == "POST") {
+            http_request<<"Content-Lenght"<<request.body.size()<<"\r\n";
+            if (!has_content_type) {
+                http_request<<"Content-Type: application/x-www-form-urlencoded\r\n";
+            }
         }
         http_request << "\r\n";
-
         if (!request.body.empty()) {
             http_request<<request.body;
         }

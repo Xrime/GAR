@@ -422,6 +422,11 @@ CMakeFiles/GAR.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
  C:/Users/xint2/CLionProjects/GAR/include/anonymity/tor_manager.h \
  C:/Users/xint2/CLionProjects/GAR/include/anonymity/tor_connector.h \
+ C:/Users/xint2/CLionProjects/GAR/include/ui/terminal_ui.h \
+ C:/msys64/mingw64/include/c++/15.2.0/vector \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/15.2.0/bits/vector.tcc \
  C:/Users/xint2/CLionProjects/GAR/include/core/http_client.h \
  C:/msys64/mingw64/include/c++/15.2.0/map \
  C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tree.h \
@@ -431,10 +436,6 @@ CMakeFiles/GAR.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/erase_if.h \
  C:/Users/xint2/CLionProjects/GAR/include/core/http_response.h \
  C:/Users/xint2/CLionProjects/GAR/include/core/http_request.h \
- C:/msys64/mingw64/include/c++/15.2.0/vector \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/vector.tcc \
  C:/msys64/mingw64/include/c++/15.2.0/thread \
  C:/msys64/mingw64/include/c++/15.2.0/stop_token \
  C:/msys64/mingw64/include/c++/15.2.0/atomic \
