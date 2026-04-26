@@ -5,6 +5,20 @@
 #include <iostream>
 
 
+static  std::string normalize_url(std::string input) {
+    while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
+        input.erase(input.begin());
+    }
+    while (!input.empty() && (input.back() ==' ' || input.back() == '\t' || input.back()=='\n')) {
+        input.pop_back();
+    }
+    if (input.empty()) return input;
+
+    if (input.rfind("http://", 0)==0 || input.rfind("https://",0)==0) {
+        return input;
+    }
+    return "https://"+input;
+}
 
 namespace gar::terminal_ui {
     TerminalUI::TerminalUI(gar::core::HttpClient& client) : http_client(client), history_index(-1) {
@@ -100,11 +114,17 @@ namespace gar::terminal_ui {
             }else if (line =="refresh") {
                 refreshPage();
             }else if (line.rfind("go ", 0) == 0) {
-                std::string url = line.substr(3);
-                goToURL(url, true);
+                std::string raw = line.substr(3);
+                std::string url = normalize_url(raw);
+                if (url.empty()) {
+                    std::cout << "Enter a URL.\n"<< std::endl;
+                }else {
+                    goToURL(url, true);
+                }
+
             }
-            else if (line.rfind("http://", 0) ==0 || line.rfind("https://",0)==0) {
-                std::string url = line.substr(3);
+            else if (line.rfind(" http://", 0) ==0 || line.rfind(" https://",0)==0) {
+                std::string url = line.substr(0);
                 while (!url.empty() && (url[0] == ' ' || url[0] == '\t')) {
                     url.erase(url.begin());
                 }
@@ -114,7 +134,10 @@ namespace gar::terminal_ui {
                 goToURL(url, true);
             }
             else if (!line.empty()) {
-                std::cout<<"Unknown command. Type help.\n"<<std::endl;
+                std::string url = normalize_url(line);
+                if (!url.empty()) {
+                    goToURL(url, true);
+                }
             }else {
                 std::cout<<"Umknown command. Type help.\n"<<std::endl;
                 }
