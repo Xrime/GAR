@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GAR.dir/src/main.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj"
   "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj.d"
+  "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj"
+  "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj"
   "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj.d"
   "GAR.exe"

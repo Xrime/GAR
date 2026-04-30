@@ -4,6 +4,7 @@
 #include "../../include/ui/terminal_ui.h"
 #include <iostream>
 #include <regex>
+#include "../include/ui/renderer.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -95,7 +96,8 @@ namespace gar::terminal_ui {
         last_size=response.body.size();
         std::cout<<"Status: "<<response.status_code<<" "<< response.status_message<<std::endl;
         std::cout<<"Body size"<< response.body.size()<<"bytes"<<std::endl;
-        std::cout<<"Preview:\n"<< response.body.substr(0,700)<<"\n"<<std::endl;
+        std::string clean = renderer::Renderer::htmlToText(response.body);
+        std::cout<<clean.substr(0,1000000)<<"\n"<<std::endl;
         extract_links(response.body, url);
         show_links();
 

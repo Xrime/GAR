@@ -19,6 +19,8 @@ add_executable(GAR
         src/ui/terminal_ui.cpp
         include/anonymity/secure_memory.h
         src/secure_memory.cpp
+        include/ui/renderer.h
+        src/ui/renderer.cpp
 )
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)
