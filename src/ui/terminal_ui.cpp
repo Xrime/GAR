@@ -3,7 +3,7 @@
 //
 #include "../../include/ui/terminal_ui.h"
 #include <iostream>
-
+#include <regex>
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -21,6 +21,39 @@ static  std::string normalize_url(std::string input) {
 }
 
 namespace gar::terminal_ui {
+    std::string TerminalUI::make_absolute_url(const std::string& base_url, const std::string& href) {
+        if (href.empty()) return "";
+        if (href.find("http://", 0)==0 || href.rfind("https://", 0)==0) {
+            return  href;
+        }
+        if (href.rfind("//",0)==0) {
+            return "https:" + href;
+        }
+        size_t scheme_pos = base_url.find("://");
+        if (scheme_pos == std::string::npos) return href;
+
+        size_t host_start = scheme_pos + 3;
+        size_t path_start  = base_url.find('/', host_start);
+
+        std::string root = (path_start == std::string::npos) ? base_url : base_url.substr(0,path_start);
+        if (path_start == std::string::npos) {
+            root = base_url.substr(0, path_start);
+        }
+        if (!href.empty() && href[0] =='/') {
+            return root + href;
+        }
+        std::string base_dir = base_url;
+        size_t last_slash = base_dir.find_last_of('/');
+
+        if (last_slash != std::string::npos && last_slash > host_start) {
+            base_dir = base_dir.substr(0, last_slash + 1);
+
+        }else {
+            base_dir = root + "/";
+            }
+        return base_dir + href;
+    }
+
     TerminalUI::TerminalUI(gar::core::HttpClient& client) : http_client(client), history_index(-1) {
 
     }
@@ -38,6 +71,7 @@ namespace gar::terminal_ui {
         std::cout << "forward -next page\n";
         std::cout << " help - show commad\n";
         std::cout << "quit - exit\n\n";
+        std::cout << "open <n> - open link by by number from current page\n";
     }
 
 
@@ -59,6 +93,8 @@ namespace gar::terminal_ui {
         std::cout<<"Status: "<<response.status_code<<" "<< response.status_message<<std::endl;
         std::cout<<"Body size"<< response.body.size()<<"bytes"<<std::endl;
         std::cout<<"Preview:\n"<< response.body.substr(0,700)<<"\n"<<std::endl;
+        extract_links(response.body, url);
+        show_links();
 
         if (add_to_history) {
             if (history_index< (int)history.size()-1) {
@@ -113,12 +149,22 @@ namespace gar::terminal_ui {
                 goForward();
             }else if (line =="refresh") {
                 refreshPage();
+            }
+            else if (line.rfind("open", 0)==0) {
+                std::string num = line.substr(5);
+                try {
+                    int idx = std::stoi(num);
+                    open_linkby_index(idx);
+                }catch (...) {
+                    std::cout<<"invalid number format.\n"<< std::endl;
+                }
             }else if (line.rfind("go ", 0) == 0) {
                 std::string raw = line.substr(3);
                 std::string url = normalize_url(raw);
                 if (url.empty()) {
                     std::cout << "Enter a URL.\n"<< std::endl;
-                }else {
+                }
+                else {
                     goToURL(url, true);
                 }
 
@@ -138,10 +184,59 @@ namespace gar::terminal_ui {
                 if (!url.empty()) {
                     goToURL(url, true);
                 }
-            }else {
+            }
+            else {
                 std::cout<<"Umknown command. Type help.\n"<<std::endl;
                 }
             }
         }
+    void TerminalUI::extract_links(const std::string &html, const std::string &base_url) {
+        current_links.clear();
 
+        std::regex link_regex(R"(<a[^>]*href\s*=\s*["']([^"']+)["'])", std::regex::icase);
+        auto begin = std::sregex_iterator(html.begin(), html.end(), link_regex);
+        auto end = std::sregex_iterator();
+
+        for (auto it = begin; it != end; ++it) {
+            std::string href = (*it)[1].str();
+            std::string full = make_absolute_url(base_url, href);
+
+            if (full.empty()) {
+                continue;
+            }
+            if (full.rfind("javascript:",0)==0) {
+                continue;
+            }
+            if (full.rfind("mailto:", 0)==0) {
+                continue;
+            }
+            current_links.push_back(full);
+
+            if (current_links.size() >=30) {
+                break;
+            }
+        }
     }
+    void TerminalUI::show_links() {
+        if (current_links.empty()) {
+            std::cout<<"No links found on this page.\n"<< std::endl;
+            return;
+        }
+        std::cout<<"Links:\n";
+        for (size_t i = 0; i < current_links.size(); ++i) {
+            std::cout<< "["<< i <<"] " << current_links[i]<< "\n";
+        }
+        std::cout<< std::endl;
+    }
+    void TerminalUI::open_linkby_index(int index) {
+        if (index<0 || index >= (int)current_links.size()) {
+            std::cout<<"Invalid link index.\n"<< std::endl;
+            return;
+        }
+        goToURL(current_links[index],true);
+    }
+
+
+
+
+}

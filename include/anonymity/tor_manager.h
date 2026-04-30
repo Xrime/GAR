@@ -6,6 +6,8 @@
 #define GAR_TOR_MANAGER_H
 #include <string>
 #include <memory>
+#include <map>
+#include <vector>
 
 namespace gar::anonymity {
     class TorManager {
@@ -31,10 +33,9 @@ namespace gar::anonymity {
         std::string last_error_;
         std::string findTorExecutable();
         bool verifyTorIsRunning();
-
         void setError(const std::string& error);
-
         std::string findTorrcFile();
+
 
     };
 }

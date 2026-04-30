@@ -24,6 +24,11 @@ namespace gar::terminal_ui {
         void goBack();
         void goForward();
         void refreshPage();
+        std::vector<std::string> current_links;
+        void extract_links(const std::string& html, const std::string& base_url);
+        void show_links();
+        void open_linkby_index(int index);
+        std::string make_absolute_url(const std::string& base_url, const std::string& href);
     };
 }
 #endif //GAR_TERMINAL_UI_H
