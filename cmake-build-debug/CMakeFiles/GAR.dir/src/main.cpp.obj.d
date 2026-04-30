@@ -476,4 +476,5 @@ CMakeFiles/GAR.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/monostate.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/formatfwd.h \
  C:/msys64/mingw64/include/c++/15.2.0/bits/unicode.h \
- C:/msys64/mingw64/include/c++/15.2.0/bits/unicode-data.h
+ C:/msys64/mingw64/include/c++/15.2.0/bits/unicode-data.h \
+ C:/Users/xint2/CLionProjects/GAR/include/anonymity/secure_memory.h

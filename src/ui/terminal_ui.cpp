@@ -90,11 +90,16 @@ namespace gar::terminal_ui {
             std::cout<<"FAILED: "<<response.error_message<<"\n";
             return;
         }
+        last_url= url;
+        last_status= response.status_code;
+        last_size=response.body.size();
         std::cout<<"Status: "<<response.status_code<<" "<< response.status_message<<std::endl;
         std::cout<<"Body size"<< response.body.size()<<"bytes"<<std::endl;
         std::cout<<"Preview:\n"<< response.body.substr(0,700)<<"\n"<<std::endl;
         extract_links(response.body, url);
         show_links();
+
+        std::cout << "\n[status]"<<last_url<<"|"<<last_status<<"|"<<last_size<<"bytes\n"<<std::endl;
 
         if (add_to_history) {
             if (history_index< (int)history.size()-1) {

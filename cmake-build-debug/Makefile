@@ -224,6 +224,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/secure_memory.obj: src/secure_memory.cpp.obj
+.PHONY : src/secure_memory.obj
+
+# target to build an object file
+src/secure_memory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.obj
+.PHONY : src/secure_memory.cpp.obj
+
+src/secure_memory.i: src/secure_memory.cpp.i
+.PHONY : src/secure_memory.i
+
+# target to preprocess a source file
+src/secure_memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.i
+.PHONY : src/secure_memory.cpp.i
+
+src/secure_memory.s: src/secure_memory.cpp.s
+.PHONY : src/secure_memory.s
+
+# target to generate assembly for a file
+src/secure_memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.s
+.PHONY : src/secure_memory.cpp.s
+
 src/ui/terminal_ui.obj: src/ui/terminal_ui.cpp.obj
 .PHONY : src/ui/terminal_ui.obj
 
@@ -269,6 +293,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/secure_memory.obj
+	@echo ... src/secure_memory.i
+	@echo ... src/secure_memory.s
 	@echo ... src/ui/terminal_ui.obj
 	@echo ... src/ui/terminal_ui.i
 	@echo ... src/ui/terminal_ui.s

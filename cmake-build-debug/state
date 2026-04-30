@@ -1,4 +1,4 @@
-# Tor state file last generated on 2026-04-30 10:04:46 local time
+# Tor state file last generated on 2026-04-30 16:35:08 local time
 # Other times below are in UTC
 # You *do not* need to edit this file.
 
@@ -235,10 +235,10 @@ Guard in=default rsa_id=42E4CD0A4BA555A4069A0589121A44BF0A009C6E nickname=Enkidu
 Guard in=default rsa_id=CC744264F97DE9C3916EE9CEDBA33627F819A537 nickname=jonathan sampled_on=2026-04-15T04:19:19 sampled_idx=54 sampled_by=0.4.9.6 listed=1
 Guard in=default rsa_id=21E86043B0AA1DD258F7801BEE21D2227844EC79 nickname=hpproSW3 sampled_on=2026-04-24T20:28:45 sampled_idx=55 sampled_by=0.4.9.6 listed=1
 Guard in=default rsa_id=9AA1C5F683A4CA76C27648D8CFD76C7FEB66082E nickname=gentlewind sampled_on=2026-04-18T19:13:10 sampled_idx=56 sampled_by=0.4.9.6 listed=1
-Guard in=default rsa_id=86FD3E9304EDE0BBE0EEF6515FB83F62D45168DB nickname=NTH78R1 sampled_on=2026-04-13T23:39:49 sampled_idx=57 sampled_by=0.4.9.6 listed=1 confirmed_on=2026-04-15T05:30:47 confirmed_idx=13
+Guard in=default rsa_id=86FD3E9304EDE0BBE0EEF6515FB83F62D45168DB nickname=NTH78R1 sampled_on=2026-04-13T23:39:49 sampled_idx=57 sampled_by=0.4.9.6 unlisted_since=2026-04-29T16:13:54 listed=0 confirmed_on=2026-04-15T05:30:47 confirmed_idx=13
 Guard in=default rsa_id=749642E07B1A33D167C771302E05104B6F12121F nickname=SlackSucks sampled_on=2026-04-24T07:15:01 sampled_idx=58 sampled_by=0.4.9.6 listed=1
-Guard in=default rsa_id=A9B34C4B0B339A865AFD6BC8D04CBBC4B6651739 nickname=NTH168R1 sampled_on=2026-04-24T13:31:27 sampled_idx=59 sampled_by=0.4.9.6 listed=1 confirmed_on=2026-04-24T00:05:15 confirmed_idx=14
-LastWritten 2026-04-30 09:04:46
-MinutesSinceUserActivity 5
+Guard in=default rsa_id=A9B34C4B0B339A865AFD6BC8D04CBBC4B6651739 nickname=NTH168R1 sampled_on=2026-04-24T13:31:27 sampled_idx=59 sampled_by=0.4.9.6 unlisted_since=2026-04-27T16:52:06 listed=0 confirmed_on=2026-04-24T00:05:15 confirmed_idx=14
+LastWritten 2026-04-30 15:35:08
+MinutesSinceUserActivity 11
 TorVersion Tor 0.4.9.6 (git-894a92ac2279747e)
 TotalBuildTimes 1000

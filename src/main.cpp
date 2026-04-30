@@ -9,6 +9,7 @@
 #include <vector>
 #include  <thread>
 #include <chrono>
+#include "../include/anonymity/secure_memory.h"
 
 // void initializeTor() {
 //     std::cout<<"Initializing Tor Connection..."<<std::endl;
@@ -77,53 +78,15 @@ int main() {
     gar::terminal_ui::TerminalUI ui(http_client);
     ui.run();
 
-    // std::vector<std::string> test_urls = {
-    //     "https://api.ipify.org"
-    //     // "https://www.google.com"
-    //      // "https://httpbin.org/get"
-    //     //  "http://ipv4.icanhazip.com/",
-    //     // "http://example.com"
-    // };
-    //
-    // std::string url= "https://httpbin.org/get";
-    //
-    // std::cout << "Testing: " <<  url << std::endl;
-    //
-    // gar::core::HttpResponse response = http_client.get(url);
-    //
-    // if (response.success) {
-    //     std::cout << " SUCCESS!" << std::endl;
-    //     std::cout << "Status: " << response.status_code << std::endl;
-    //     std::cout << "Body size: " << response.body.length() << " bytes" << std::endl;
-    //
-    //     if (response.body.length() > 0) {
-    //         std::string preview = response.body.substr(0, 50);
-    //         std::cout << "Preview: " << preview << "..." << std::endl;
-    //     }
-    // }else {
-    //         std::cout << " FAILED - " << response.error_message << std::endl;
-    //     }
-    // gar::core::HttpRequest post_request;
-    // post_request.url = "https://httpbin.org/post";
-    // post_request.method ="POST";
-    // post_request.headers["HOST"] = "httpbin.org";
-    // post_request.headers["User-Agent"] = "GAR";
-    // post_request.headers["Accept"] = "*/*";
-    // post_request.headers["Connection"]="close";
-    // post_request.headers["Content-types"] = "application/json";
-    // post_request.body = "{\"name\":\"gar\",\"mode\":\"tor\"}";;
-    //
-    // gar::core::HttpResponse post_response= http_client.performRequest(post_request);
-    // if (post_response.success) {
-    //     std::cout<<"Status: "<<post_response.status_code<<std::endl;
-    //     std::cout<<"POST preview"<<post_response.body.substr(0,120)<< std::endl;
-    // }else {
-    //     std::cout<<"POST failed "<<post_response.error_message<<std::endl;
-    // }
-
     std::cout << "====================================================" << std::endl;
     std::cout << " GAR is running with Tor successfully!" << std::endl;
     std::cout << "====================================================" << std::endl;
     std::cout<<"\n";
+
+    gar::secure_memory::Securebuffer buf(32);
+    memcpy(buf.data(), "SECRET-TOKEN-123",17);
+
+    gar::secure_memory::SecureString s ("my_password");
+    s.set("new_password");
     return 0;
 }

@@ -29,6 +29,9 @@ namespace gar::terminal_ui {
         void show_links();
         void open_linkby_index(int index);
         std::string make_absolute_url(const std::string& base_url, const std::string& href);
+        std::string last_url;
+        int last_status;
+        size_t last_size;
     };
 }
 #endif //GAR_TERMINAL_UI_H
