@@ -256,6 +256,8 @@ namespace gar::core {
 
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
+            curl_easy_setopt(curl, CURLOPT_CAINFO, "certs/cacert.pem");
+            curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
 
             struct curl_slist* curl_headers = nullptr;
             for (const auto& h : request.headers) {

@@ -8,7 +8,6 @@
 #include <string>
 
 namespace gar::renderer {
-
     class Renderer {
     public:
         static std::string htmlToText(const std::string& html);

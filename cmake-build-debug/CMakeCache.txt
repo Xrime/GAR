@@ -261,6 +261,9 @@ GAR_IS_TOP_LEVEL:STATIC=ON
 GAR_SOURCE_DIR:STATIC=C:/Users/xint2/CLionProjects/GAR
 
 //Path to a library.
+GUMBO_LIBRARY:FILEPATH=C:/msys64/mingw64/lib/libgumbo.dll.a
+
+//Path to a library.
 LIB_EAY:FILEPATH=C:/msys64/mingw64/lib/libcrypto.dll.a
 
 //Path to a file.

@@ -2,9 +2,13 @@
 // Created by xint2 on 25/04/2026.
 //
 #include "../../include/ui/terminal_ui.h"
+
+#include <gumbo.h>
 #include <iostream>
 #include <regex>
 #include "../include/ui/renderer.h"
+#include <gumbo.h>
+#include <functional>
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -51,7 +55,7 @@ namespace gar::terminal_ui {
 
         }else {
             base_dir = root + "/";
-            }
+        }
         return base_dir + href;
     }
 
@@ -194,35 +198,80 @@ namespace gar::terminal_ui {
             }
             else {
                 std::cout<<"Umknown command. Type help.\n"<<std::endl;
-                }
             }
         }
+    }
     void TerminalUI::extract_links(const std::string &html, const std::string &base_url) {
         current_links.clear();
 
-        std::regex link_regex(R"(<a[^>]*href\s*=\s*["']([^"']+)["'])", std::regex::icase);
-        auto begin = std::sregex_iterator(html.begin(), html.end(), link_regex);
-        auto end = std::sregex_iterator();
+        // std::regex link_regex(R"(<a[^>]*href\s*=\s*["']([^"']+)["'])", std::regex::icase);
+        // auto begin = std::sregex_iterator(html.begin(), html.end(), link_regex);
+        // auto end = std::sregex_iterator();
+        // auto decodeEntities= [](std::string s ) {
+        //     size_t pos = 0;
+        //     while ((pos = s.find("&amp;", pos))!= std::string::npos) {
+        //         s.replace(pos, 5,"&");
+        //     }
+        //     return s;
+        // };
 
-        for (auto it = begin; it != end; ++it) {
-            std::string href = (*it)[1].str();
-            std::string full = make_absolute_url(base_url, href);
 
-            if (full.empty()) {
-                continue;
+        auto decode_entities= [](std::string s) {
+            size_t pos = 0;
+            while ((pos = s.find("&amp;", pos)) != std::string::npos) {
+                s.replace(pos, 5, "&");
             }
-            if (full.rfind("javascript:",0)==0) {
-                continue;
-            }
-            if (full.rfind("mailto:", 0)==0) {
-                continue;
-            }
-            current_links.push_back(full);
+            return s;
+        };
+        GumboOutput* output = gumbo_parse(html.c_str());
+        std::function<void(GumboNode*)> walk = [&](GumboNode* node) {
+            if (!node || current_links.size() >= 30) return;
 
-            if (current_links.size() >=30) {
-                break;
+            if (node->type == GUMBO_NODE_ELEMENT) {
+                if (node->v.element.tag ==GUMBO_TAG_A) {
+                    GumboAttribute* href_attr = gumbo_get_attribute(&node -> v.element.attributes, "href");
+                    if (href_attr && href_attr ->value){
+                        std::string href = decode_entities(href_attr ->value);
+                        std::string full = make_absolute_url(base_url,href);
+                        if (!full.empty() && full.rfind("javascript:", 0)!=0 && full.rfind("mailto:",0) !=0) {
+                            current_links.push_back(full);
+                        }
+                    }
+                }
+                GumboVector* children = &node -> v.element.children;
+                for (unsigned int i = 0; i < children->length; ++i) {
+                    walk(static_cast<GumboNode*>(children->data[i]));
+                    if (current_links.size()>=30)break;
+                }
+
             }
-        }
+        };
+        walk(output->root);
+        gumbo_destroy_output(&kGumboDefaultOptions, output);
+
+
+        //
+        //     for (auto it = begin; it != end; ++it) {
+        //         std::string href = (*it)[1].str();
+        //         href = decodeEntities(href);
+        //         std::string full = make_absolute_url(base_url, href);
+        //
+        //         if (full.empty()) {
+        //             continue;
+        //         }
+        //         if (full.rfind("javascript:",0)==0) {
+        //             continue;
+        //         }
+        //         if (full.rfind("mailto:", 0)==0) {
+        //             continue;
+        //         }
+        //         current_links.push_back(full);
+        //
+        //         if (current_links.size() >=30) {
+        //             break;
+        //         }
+        //     }
+        //}
     }
     void TerminalUI::show_links() {
         if (current_links.empty()) {
@@ -234,16 +283,12 @@ namespace gar::terminal_ui {
             std::cout<< "["<< i <<"] " << current_links[i]<< "\n";
         }
         std::cout<< std::endl;
-    }
-    void TerminalUI::open_linkby_index(int index) {
+    }void TerminalUI::open_linkby_index(int index) {
         if (index<0 || index >= (int)current_links.size()) {
             std::cout<<"Invalid link index.\n"<< std::endl;
             return;
         }
         goToURL(current_links[index],true);
     }
-
-
-
 
 }

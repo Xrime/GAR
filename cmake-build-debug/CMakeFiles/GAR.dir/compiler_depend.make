@@ -2571,6 +2571,7 @@ CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src
   C:/msys64/mingw64/include/crtdefs.h \
   C:/msys64/mingw64/include/ctype.h \
   C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/gumbo.h \
   C:/msys64/mingw64/include/limits.h \
   C:/msys64/mingw64/include/locale.h \
   C:/msys64/mingw64/include/malloc.h \
@@ -2593,12 +2594,14 @@ CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sys/timeb.h \
   C:/msys64/mingw64/include/sys/types.h \
+  C:/msys64/mingw64/include/tag_enum.h \
   C:/msys64/mingw64/include/time.h \
   C:/msys64/mingw64/include/vadefs.h \
   C:/msys64/mingw64/include/wchar.h \
   C:/msys64/mingw64/include/wctype.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
 
@@ -2614,6 +2617,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/_mingw_secapi.h \
   C:/msys64/mingw64/include/_mingw_stat64.h \
   C:/msys64/mingw64/include/_timeval.h \
+  C:/msys64/mingw64/include/c++/15.2.0/array \
   C:/msys64/mingw64/include/c++/15.2.0/backward/binders.h \
   C:/msys64/mingw64/include/c++/15.2.0/bit \
   C:/msys64/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
@@ -2633,6 +2637,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/deque.tcc \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/erase_if.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/exception.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/exception_defines.h \
@@ -2640,6 +2645,8 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/c++/15.2.0/bits/functexcept.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/functional_hash.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/invoke.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/ios_base.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc \
@@ -2712,6 +2719,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/c++/15.2.0/bits/stringfwd.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
+  C:/msys64/mingw64/include/c++/15.2.0/bits/unordered_map.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
   C:/msys64/mingw64/include/c++/15.2.0/bits/utility.h \
@@ -2740,6 +2748,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
   C:/msys64/mingw64/include/c++/15.2.0/ext/string_conversions.h \
   C:/msys64/mingw64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/mingw64/include/c++/15.2.0/functional \
   C:/msys64/mingw64/include/c++/15.2.0/initializer_list \
   C:/msys64/mingw64/include/c++/15.2.0/ios \
   C:/msys64/mingw64/include/c++/15.2.0/iosfwd \
@@ -2763,6 +2772,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/c++/15.2.0/tuple \
   C:/msys64/mingw64/include/c++/15.2.0/type_traits \
   C:/msys64/mingw64/include/c++/15.2.0/typeinfo \
+  C:/msys64/mingw64/include/c++/15.2.0/unordered_map \
   C:/msys64/mingw64/include/c++/15.2.0/vector \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
   C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
@@ -2785,6 +2795,7 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/crtdefs.h \
   C:/msys64/mingw64/include/ctype.h \
   C:/msys64/mingw64/include/errno.h \
+  C:/msys64/mingw64/include/gumbo.h \
   C:/msys64/mingw64/include/limits.h \
   C:/msys64/mingw64/include/locale.h \
   C:/msys64/mingw64/include/malloc.h \
@@ -2807,15 +2818,21 @@ CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/
   C:/msys64/mingw64/include/swprintf.inl \
   C:/msys64/mingw64/include/sys/timeb.h \
   C:/msys64/mingw64/include/sys/types.h \
+  C:/msys64/mingw64/include/tag_enum.h \
   C:/msys64/mingw64/include/time.h \
   C:/msys64/mingw64/include/vadefs.h \
   C:/msys64/mingw64/include/wchar.h \
   C:/msys64/mingw64/include/wctype.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
 
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/unordered_map.h:
+
+C:/msys64/mingw64/include/tag_enum.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/stack:
 
@@ -2844,6 +2861,8 @@ C:/msys64/mingw64/include/c++/15.2.0/bits/regex_automaton.h:
 C:/msys64/mingw64/include/c++/15.2.0/bits/regex.tcc:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/deque.tcc:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable.h:
 
 C:/Users/xint2/CLionProjects/GAR/include/ui/renderer.h:
 
@@ -2915,6 +2934,8 @@ C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/opt_random.h:
 
 C:/msys64/mingw64/include/process.h:
 
+C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h:
+
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2minmaxintrin.h:
 
 C:/msys64/mingw64/include/objidlbase.h:
@@ -2932,6 +2953,8 @@ C:/msys64/mingw64/include/oleauto.h:
 C:/msys64/mingw64/include/c++/15.2.0/bits/basic_string.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc:
+
+C:/msys64/mingw64/include/c++/15.2.0/unordered_map:
 
 C:/msys64/mingw64/include/ncrypt.h:
 
@@ -2978,6 +3001,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
 C:/msys64/mingw64/include/timeapi.h:
 
 C:/msys64/mingw64/include/pthread_time.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/cstddef:
 
@@ -3172,6 +3197,8 @@ C:/msys64/mingw64/include/corecrt_wctype.h:
 C:/msys64/mingw64/include/cguid.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h:
+
+C:/msys64/mingw64/include/gumbo.h:
 
 C:/msys64/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h:
 
@@ -3686,6 +3713,8 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxint8intrin.h:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxmovrsintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512mediaintrin.h:
+
+C:/msys64/mingw64/include/c++/15.2.0/functional:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512minmaxintrin.h:
 

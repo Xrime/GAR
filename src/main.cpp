@@ -10,6 +10,7 @@
 #include  <thread>
 #include <chrono>
 #include "../include/anonymity/secure_memory.h"
+#include  <windows.h>
 
 // void initializeTor() {
 //     std::cout<<"Initializing Tor Connection..."<<std::endl;
@@ -20,6 +21,8 @@
 // }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     //welcome
     std::cout << "\n";
     std::cout << "#====================================================#" << std::endl;
