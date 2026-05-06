@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/xint2/CLionProjects/GAR/src/core/http_client.cpp" "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/main.cpp" "CMakeFiles/GAR.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/main.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/secure_memory.cpp" "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj.d"
+  "C:/Users/xint2/CLionProjects/GAR/src/security/header_analyzer.cpp" "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/ui/renderer.cpp" "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/ui/terminal_ui.cpp" "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj.d"
   )

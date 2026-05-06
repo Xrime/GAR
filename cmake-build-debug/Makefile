@@ -248,6 +248,30 @@ src/secure_memory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.s
 .PHONY : src/secure_memory.cpp.s
 
+src/security/header_analyzer.obj: src/security/header_analyzer.cpp.obj
+.PHONY : src/security/header_analyzer.obj
+
+# target to build an object file
+src/security/header_analyzer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj
+.PHONY : src/security/header_analyzer.cpp.obj
+
+src/security/header_analyzer.i: src/security/header_analyzer.cpp.i
+.PHONY : src/security/header_analyzer.i
+
+# target to preprocess a source file
+src/security/header_analyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.i
+.PHONY : src/security/header_analyzer.cpp.i
+
+src/security/header_analyzer.s: src/security/header_analyzer.cpp.s
+.PHONY : src/security/header_analyzer.s
+
+# target to generate assembly for a file
+src/security/header_analyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.s
+.PHONY : src/security/header_analyzer.cpp.s
+
 src/ui/renderer.obj: src/ui/renderer.cpp.obj
 .PHONY : src/ui/renderer.obj
 
@@ -320,6 +344,9 @@ help:
 	@echo ... src/secure_memory.obj
 	@echo ... src/secure_memory.i
 	@echo ... src/secure_memory.s
+	@echo ... src/security/header_analyzer.obj
+	@echo ... src/security/header_analyzer.i
+	@echo ... src/security/header_analyzer.s
 	@echo ... src/ui/renderer.obj
 	@echo ... src/ui/renderer.i
 	@echo ... src/ui/renderer.s

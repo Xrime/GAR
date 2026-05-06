@@ -25,6 +25,8 @@ add_executable(GAR
         src/secure_memory.cpp
         include/ui/renderer.h
         src/ui/renderer.cpp
+        include/security/header_analyzer.h
+        src/security/header_analyzer.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

@@ -25,10 +25,12 @@ int main() {
     SetConsoleCP(CP_UTF8);
     //welcome
     std::cout << "\n";
-    std::cout << "#====================================================#" << std::endl;
-    std::cout << "#            GAR - Ghost Anonymous Router            #" << std::endl;
-    std::cout << "#                                                    #" << std::endl;
-    std::cout << "#====================================================#" << std::endl;
+    std::cout << "  ██████╗  █████╗ ██████╗ " << std::endl;
+    std::cout << " ██╔════╝ ██╔══██╗██╔══██╗" << std::endl;
+    std::cout << " ██║  ███╗███████║██████╔╝ " << std::endl;
+    std::cout << " ██║   ██║██╔══██║██╔══██╗ " << std::endl;
+    std::cout << " ╚██████╔╝██║  ██║██║  ██║ " << std::endl;
+    std::cout << "  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ " << std::endl;
     std::cout << "\n";
 
     // //create Tor connector

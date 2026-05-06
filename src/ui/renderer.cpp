@@ -55,14 +55,19 @@ namespace gar::renderer {
             }
             appendChildren(&node ->v.element.children, out);
 
-
+            if (tag ==GUMBO_TAG_H1|| tag == GUMBO_TAG_H2 || tag == GUMBO_TAG_H3) {
+                out.push_back('\n');
+                out.append("================================\n");
+            }
             if (tag == GUMBO_TAG_P || tag == GUMBO_TAG_BR ||
-                tag == GUMBO_TAG_DIV || tag == GUMBO_TAG_H1 || tag == GUMBO_TAG_H2
+                tag == GUMBO_TAG_DIV
                 || tag == GUMBO_TAG_H3 || tag == GUMBO_TAG_H4 ||
                 tag == GUMBO_TAG_H5 || tag == GUMBO_TAG_H6 ||
                 tag == GUMBO_TAG_LI) {
                 out.push_back('\n');
                 }
+
+
         }
     }
     std::string Renderer::htmlToText(const std::string &html) {
@@ -73,6 +78,37 @@ namespace gar::renderer {
         gumbo_destroy_output(&kGumboDefaultOptions, output);
         return out;
     }
+
+    std::string Renderer::extracttitle(const std::string &html) {
+        GumboOutput* output = gumbo_parse(html.c_str());
+        std::string title;
+
+        std:: function<void(GumboNode*)> walk =[&](GumboNode* node) {
+            if (!node || !title.empty()) return;
+
+            if (node -> type == GUMBO_NODE_ELEMENT && node->v.element.tag == GUMBO_TAG_TITLE) {
+                if (node -> v.element.children.length >0) {
+                    GumboNode* text = static_cast<GumboNode *>(node -> v.element.children.data[0]);
+                    if (text->type ==GUMBO_NODE_TEXT) {
+                        title = text ->v.text.text;
+                    }
+                }
+                return;
+            }
+            if (node -> type== GUMBO_NODE_ELEMENT) {
+                GumboVector* children = &node ->v.element.children;
+                for (unsigned int i = 0; i< children->length; ++i) {
+                    walk(static_cast<GumboNode*>(children->data[i]));
+                    if (!title.empty()) break;
+                }
+            }
+        };
+        walk (output->root);
+        gumbo_destroy_output(&kGumboDefaultOptions, output);
+        return title;
+
+    }
+
 
 
 

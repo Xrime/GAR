@@ -7,10 +7,12 @@
 
 #include <string>
 
+
 namespace gar::renderer {
     class Renderer {
     public:
         static std::string htmlToText(const std::string& html);
+        static std::string extracttitle(const std::string& html);
     };
 }
 

@@ -3,12 +3,15 @@
 //
 #include "../../include/ui/terminal_ui.h"
 
+#include <chrono>
 #include <gumbo.h>
 #include <iostream>
 #include <regex>
 #include "../include/ui/renderer.h"
 #include <gumbo.h>
 #include <functional>
+
+#include "security/header_analyzer.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -77,16 +80,26 @@ namespace gar::terminal_ui {
         std::cout << " help - show commad\n";
         std::cout << "quit - exit\n\n";
         std::cout << "open <n> - open link by by number from current page\n";
+        std::cout<<"histroy - show visited pages\n";
+        std::cout<<"bookmark - save current page\n";
+        std::cout<<"bookmaarks - list bookmarks\n";
+        std::cout<<"open <n> - open bookmark by number\n";
+        std::cout<<"Source - toggle raw HTML view\n";
+        std::cout<<"header - analyze security headers\n";
+
     }
 
 
     void TerminalUI::goToURL(const std::string &url, bool add_to_history) {
+        auto start = std::chrono::steady_clock::now();
         core::HttpRequest request;
         request.url = url;
         request.method = "GET";
         request.headers["User-Agent"] = "GAR/1.0";
         request.headers["Accept"]="*/*";
         request.headers["Connection"] ="close";
+        auto end = std::chrono::steady_clock::now();
+        auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
         std::cout<<"\nLoading: "<<url<<std::endl;
         gar::core::HttpResponse response =http_client.performRequest(request);
@@ -95,17 +108,23 @@ namespace gar::terminal_ui {
             std::cout<<"FAILED: "<<response.error_message<<"\n";
             return;
         }
+        last_headers= response.headers;
         last_url= url;
         last_status= response.status_code;
         last_size=response.body.size();
-        std::cout<<"Status: "<<response.status_code<<" "<< response.status_message<<std::endl;
+        std::cout<<"Status: "<< last_url<< " | "<<last_size<<" bytes"<<" | "<<ms<<"ms\n\n";
         std::cout<<"Body size"<< response.body.size()<<"bytes"<<std::endl;
         std::string clean = renderer::Renderer::htmlToText(response.body);
         std::cout<<clean.substr(0,1000000)<<"\n"<<std::endl;
         extract_links(response.body, url);
         show_links();
 
-        std::cout << "\n[status]"<<last_url<<"|"<<last_status<<"|"<<last_size<<"bytes\n"<<std::endl;
+        std::string title = renderer::Renderer::extracttitle(response.body);
+        if (!title.empty()) {
+            std::cout <<"\n TITLE "<< title<<"\n\n";
+        }
+
+        std::cout << "\n[status]"<<last_url<<"|"<<last_status<<"|"<<last_size<<"bytes\n"<<" | "<< ms <<"ms\n\n"<<std::endl;
 
         if (add_to_history) {
             if (history_index< (int)history.size()-1) {
@@ -115,6 +134,7 @@ namespace gar::terminal_ui {
             history_index =(int)history.size()-1;
 
         }
+        last_html = response.body;
     }
     void TerminalUI::goBack() {
         if (history_index <= 0) {
@@ -160,6 +180,69 @@ namespace gar::terminal_ui {
                 goForward();
             }else if (line =="refresh") {
                 refreshPage();
+            }else if (line == "headers") {
+                using gar::security::HeaderAnalzer;
+                if (last_headers.empty()) {
+                    std::cout << "No headers avaliable\n\n";
+                    continue;
+                }
+                auto report = HeaderAnalzer::analyze(last_headers);
+                std::cout<<"\n...Security Headers..\n";
+                std::cout<<"present:\n";
+                for (const auto& h : report.present) std::cout<<" + "<<h<<"\n";
+                std::cout<<"Missing\n";
+                for (const auto& h : report.missing) std::cout<<" - "<<h<<"\n";
+                std::cout<<"\n";
+            }
+             else if (line == "history") {
+                if (history.empty()) {
+                    std::cout << "Histroy is empty.\n\n";
+                    continue;
+                }
+                std::cout <<"\n... Histroy is empty. \n\n";
+                for (size_t i = 0; i< history.size();i++) {
+                    std::cout << "["<<i<<"]"<<histroy[i]<< "\n";
+                }
+                std::cout <<"\n";
+            }
+            else if (line == "bookmarks") {
+                if (last_url.empty()) {
+                    std::cout<< "No page loaded \n\n";
+                }else {
+                    bookmarks.push_back(last_url);
+                    std::cout<<"Bookmarked:"<<last_url<<"\n\n";
+                }
+            }
+            else if (line =="bookmarks") {
+                if (bookmarks.empty()) {
+                    std::cout<<"No bookmarks yet.\n\n";
+                }else {
+                    std::cout<<"\n BOOKMARKS \n";
+                    for (size_t i = 0; i< bookmarks.size(); i++) {
+                        std::cout<<"[" << i<<"]"<<bookmarks[i]<<"\n";
+                    }
+                    std::cout<<"\n";
+                }
+            }
+            else if (line.rfind("openb", 0)==0) {
+                std::string num =line.substr(6);
+                try {
+                    int idx =std::stoi(num);
+                    if (idx >= 0 && idx < (int)bookmarks.size()) {
+                        goToURL(bookmarks[idx], true);
+                    }else{
+                    std::cout << "invalid bookmark index.\n\n";
+                    }
+                }
+                catch (...) {
+                    std::cout << "invalid number format.\n\n";
+                }
+            }else if (line =="source") {
+                show_source = !show_source;
+                std::cout << (show_source ? "source view ON \n\n": "Source view OFF\n\n");
+                if (show_source && !last_html.empty()) {
+                    std::cout<< last_html.substr(0,10000000)<< "\n\n";
+                }
             }
             else if (line.rfind("open", 0)==0) {
                 std::string num = line.substr(5);
@@ -196,6 +279,7 @@ namespace gar::terminal_ui {
                     goToURL(url, true);
                 }
             }
+
             else {
                 std::cout<<"Umknown command. Type help.\n"<<std::endl;
             }

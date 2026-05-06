@@ -32,6 +32,11 @@ namespace gar::terminal_ui {
         std::string last_url;
         int last_status;
         size_t last_size;
+        std::vector<std::string> histroy;
+        std::vector<std::string> bookmarks;
+        bool show_source = false;
+        std::string last_html;
+        std::map<std::string, std::string> last_headers;
     };
 }
 #endif //GAR_TERMINAL_UI_H
