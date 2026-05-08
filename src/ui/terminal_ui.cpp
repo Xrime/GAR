@@ -12,6 +12,8 @@
 #include <functional>
 
 #include "security/header_analyzer.h"
+#include "../../include/anonymity/tor_control.h"
+#include "anonymity/secure_memory.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -78,14 +80,16 @@ namespace gar::terminal_ui {
         std::cout << "back -previous page\n";
         std::cout << "forward -next page\n";
         std::cout << " help - show commad\n";
-        std::cout << "quit - exit\n\n";
+        std::cout << "quit - exit\n";
         std::cout << "open <n> - open link by by number from current page\n";
         std::cout<<"histroy - show visited pages\n";
         std::cout<<"bookmark - save current page\n";
-        std::cout<<"bookmaarks - list bookmarks\n";
+        std::cout<<"bookmarks - list bookmarks\n";
         std::cout<<"open <n> - open bookmark by number\n";
         std::cout<<"Source - toggle raw HTML view\n";
         std::cout<<"header - analyze security headers\n";
+        std::cout<<"newnym - request new IP circuit\n";
+        std::cout<< "IP - show exit IP \n";
 
     }
 
@@ -204,6 +208,40 @@ namespace gar::terminal_ui {
                     std::cout << "["<<i<<"]"<<histroy[i]<< "\n";
                 }
                 std::cout <<"\n";
+            }
+            else if (line == "newnym") {
+                gar::anonymity::TorControl ctrl;
+                if (!ctrl.connect()) {
+                    std::cout << "Tor control connect faileed: "<<ctrl.last_error()<<"\n\n";
+                    continue;
+                }if (!ctrl.authenticate()) {
+                    std::cout << " Auth failed:" << ctrl.last_error()<<"\n\n";
+                    ctrl.disconnect();
+                    continue;;
+                }
+                if (ctrl.signal_newnym()) {
+                    std::cout<< "NEWNYM sent. wait 10s for new circuit.\n\n";
+                }else {
+                    std::cout << "NEWNyM failed: "<<ctrl.last_error()<<"\n\n";
+                }
+                ctrl.disconnect();
+            }
+            else if (line.rfind("openh", 0) == 0) {
+                std::string num = line.substr(6);
+                try {
+                    int idx = std::stoi(num);
+                    if (idx >= 0 && idx < (int)history.size()) {
+                        goToURL(history[idx], true);
+                    }else {
+                        std::cout<< "Invalid number format.\n\n";
+                    }
+                }catch(...) {
+                    std::cout <<"Invalid number format.\n\n";
+                }
+            }
+            else if (line == "torip") {
+                goToURL("https://check.torproject.org/", true);
+
             }
             else if (line == "bookmarks") {
                 if (last_url.empty()) {
@@ -354,7 +392,7 @@ namespace gar::terminal_ui {
         //         if (current_links.size() >=30) {
         //             break;
         //         }
-        //     }
+        // }
         //}
     }
     void TerminalUI::show_links() {

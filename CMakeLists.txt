@@ -27,6 +27,9 @@ add_executable(GAR
         src/ui/renderer.cpp
         include/security/header_analyzer.h
         src/security/header_analyzer.cpp
+        include/anonymity/tor_control.h
+        src/anonymity/tor_control.cpp
+        include/core/dns_resolver.h
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
