@@ -1,22 +1,23 @@
-# Tor state file last generated on 2026-05-08 14:16:57 local time
+# Tor state file last generated on 2026-05-08 14:54:57 local time
 # Other times below are in UTC
 # You *do not* need to edit this file.
 
 CircuitBuildTimeBin 605 2
 CircuitBuildTimeBin 645 1
+CircuitBuildTimeBin 655 1
 CircuitBuildTimeBin 695 1
 CircuitBuildTimeBin 705 1
 CircuitBuildTimeBin 715 1
 CircuitBuildTimeBin 725 1
 CircuitBuildTimeBin 775 2
 CircuitBuildTimeBin 785 1
-CircuitBuildTimeBin 815 3
+CircuitBuildTimeBin 815 4
 CircuitBuildTimeBin 835 1
 CircuitBuildTimeBin 845 1
 CircuitBuildTimeBin 855 1
 CircuitBuildTimeBin 875 2
 CircuitBuildTimeBin 885 1
-CircuitBuildTimeBin 895 3
+CircuitBuildTimeBin 895 4
 CircuitBuildTimeBin 945 1
 CircuitBuildTimeBin 965 1
 CircuitBuildTimeBin 985 1
@@ -46,11 +47,14 @@ CircuitBuildTimeBin 1365 1
 CircuitBuildTimeBin 1375 2
 CircuitBuildTimeBin 1405 2
 CircuitBuildTimeBin 1425 2
+CircuitBuildTimeBin 1455 1
+CircuitBuildTimeBin 1495 1
 CircuitBuildTimeBin 1505 1
 CircuitBuildTimeBin 1535 1
 CircuitBuildTimeBin 1565 3
 CircuitBuildTimeBin 1595 1
 CircuitBuildTimeBin 1645 1
+CircuitBuildTimeBin 1685 1
 CircuitBuildTimeBin 1755 2
 CircuitBuildTimeBin 1785 1
 CircuitBuildTimeBin 1805 1
@@ -82,6 +86,7 @@ CircuitBuildTimeBin 2755 1
 CircuitBuildTimeBin 2825 1
 CircuitBuildTimeBin 2845 1
 CircuitBuildTimeBin 2915 1
+CircuitBuildTimeBin 2945 1
 CircuitBuildTimeBin 2985 2
 CircuitBuildTimeBin 3025 1
 CircuitBuildTimeBin 3095 1
@@ -192,7 +197,7 @@ Guard in=default rsa_id=9AA1C5F683A4CA76C27648D8CFD76C7FEB66082E nickname=gentle
 Guard in=default rsa_id=86FD3E9304EDE0BBE0EEF6515FB83F62D45168DB nickname=NTH78R1 sampled_on=2026-04-13T23:39:49 sampled_idx=57 sampled_by=0.4.9.6 listed=1 confirmed_on=2026-04-15T05:30:47 confirmed_idx=13
 Guard in=default rsa_id=749642E07B1A33D167C771302E05104B6F12121F nickname=SlackSucks sampled_on=2026-04-24T07:15:01 sampled_idx=58 sampled_by=0.4.9.6 listed=1
 Guard in=default rsa_id=A9B34C4B0B339A865AFD6BC8D04CBBC4B6651739 nickname=NTH168R1 sampled_on=2026-04-24T13:31:27 sampled_idx=59 sampled_by=0.4.9.6 listed=1 confirmed_on=2026-04-24T00:05:15 confirmed_idx=14
-LastWritten 2026-05-08 13:16:57
-MinutesSinceUserActivity 2
+LastWritten 2026-05-08 13:54:57
+MinutesSinceUserActivity 31
 TorVersion Tor 0.4.9.6 (git-894a92ac2279747e)
-TotalBuildTimes 183
+TotalBuildTimes 190

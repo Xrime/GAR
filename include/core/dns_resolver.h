@@ -7,7 +7,7 @@
 #include  <string>
 
 namespace gar::core {
-    class DnsResolver {
+    class dnsResolver {
     public:
         dnsResolver(const std::string& socks_host="127.0.0.1",int socks_port = 9050);
         bool resolve(const std::string& host, std::string& out_ip);

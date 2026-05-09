@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_connector.cpp" "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_control.cpp" "CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_manager.cpp" "CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj.d"
+  "C:/Users/xint2/CLionProjects/GAR/src/core/dns_resolver.cpp" "CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/core/http_client.cpp" "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/main.cpp" "CMakeFiles/GAR.dir/src/main.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/main.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/secure_memory.cpp" "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj.d"

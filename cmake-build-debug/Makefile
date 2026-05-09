@@ -200,6 +200,30 @@ src/anonymity/tor_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.s
 .PHONY : src/anonymity/tor_manager.cpp.s
 
+src/core/dns_resolver.obj: src/core/dns_resolver.cpp.obj
+.PHONY : src/core/dns_resolver.obj
+
+# target to build an object file
+src/core/dns_resolver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj
+.PHONY : src/core/dns_resolver.cpp.obj
+
+src/core/dns_resolver.i: src/core/dns_resolver.cpp.i
+.PHONY : src/core/dns_resolver.i
+
+# target to preprocess a source file
+src/core/dns_resolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.i
+.PHONY : src/core/dns_resolver.cpp.i
+
+src/core/dns_resolver.s: src/core/dns_resolver.cpp.s
+.PHONY : src/core/dns_resolver.s
+
+# target to generate assembly for a file
+src/core/dns_resolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.s
+.PHONY : src/core/dns_resolver.cpp.s
+
 src/core/http_client.obj: src/core/http_client.cpp.obj
 .PHONY : src/core/http_client.obj
 
@@ -362,6 +386,9 @@ help:
 	@echo ... src/anonymity/tor_manager.obj
 	@echo ... src/anonymity/tor_manager.i
 	@echo ... src/anonymity/tor_manager.s
+	@echo ... src/core/dns_resolver.obj
+	@echo ... src/core/dns_resolver.i
+	@echo ... src/core/dns_resolver.s
 	@echo ... src/core/http_client.obj
 	@echo ... src/core/http_client.i
 	@echo ... src/core/http_client.s

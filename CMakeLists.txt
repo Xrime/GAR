@@ -30,6 +30,7 @@ add_executable(GAR
         include/anonymity/tor_control.h
         src/anonymity/tor_control.cpp
         include/core/dns_resolver.h
+        src/core/dns_resolver.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
