@@ -128,6 +128,54 @@ GAR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
 .PHONY : GAR/fast
 
+src/anonymity/fingerprint.obj: src/anonymity/fingerprint.cpp.obj
+.PHONY : src/anonymity/fingerprint.obj
+
+# target to build an object file
+src/anonymity/fingerprint.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj
+.PHONY : src/anonymity/fingerprint.cpp.obj
+
+src/anonymity/fingerprint.i: src/anonymity/fingerprint.cpp.i
+.PHONY : src/anonymity/fingerprint.i
+
+# target to preprocess a source file
+src/anonymity/fingerprint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.i
+.PHONY : src/anonymity/fingerprint.cpp.i
+
+src/anonymity/fingerprint.s: src/anonymity/fingerprint.cpp.s
+.PHONY : src/anonymity/fingerprint.s
+
+# target to generate assembly for a file
+src/anonymity/fingerprint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.s
+.PHONY : src/anonymity/fingerprint.cpp.s
+
+src/anonymity/secure_memory.obj: src/anonymity/secure_memory.cpp.obj
+.PHONY : src/anonymity/secure_memory.obj
+
+# target to build an object file
+src/anonymity/secure_memory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj
+.PHONY : src/anonymity/secure_memory.cpp.obj
+
+src/anonymity/secure_memory.i: src/anonymity/secure_memory.cpp.i
+.PHONY : src/anonymity/secure_memory.i
+
+# target to preprocess a source file
+src/anonymity/secure_memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.i
+.PHONY : src/anonymity/secure_memory.cpp.i
+
+src/anonymity/secure_memory.s: src/anonymity/secure_memory.cpp.s
+.PHONY : src/anonymity/secure_memory.s
+
+# target to generate assembly for a file
+src/anonymity/secure_memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.s
+.PHONY : src/anonymity/secure_memory.cpp.s
+
 src/anonymity/tor_connector.obj: src/anonymity/tor_connector.cpp.obj
 .PHONY : src/anonymity/tor_connector.obj
 
@@ -272,30 +320,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/secure_memory.obj: src/secure_memory.cpp.obj
-.PHONY : src/secure_memory.obj
-
-# target to build an object file
-src/secure_memory.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.obj
-.PHONY : src/secure_memory.cpp.obj
-
-src/secure_memory.i: src/secure_memory.cpp.i
-.PHONY : src/secure_memory.i
-
-# target to preprocess a source file
-src/secure_memory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.i
-.PHONY : src/secure_memory.cpp.i
-
-src/secure_memory.s: src/secure_memory.cpp.s
-.PHONY : src/secure_memory.s
-
-# target to generate assembly for a file
-src/secure_memory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/secure_memory.cpp.s
-.PHONY : src/secure_memory.cpp.s
-
 src/security/header_analyzer.obj: src/security/header_analyzer.cpp.obj
 .PHONY : src/security/header_analyzer.obj
 
@@ -377,6 +401,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GAR
+	@echo ... src/anonymity/fingerprint.obj
+	@echo ... src/anonymity/fingerprint.i
+	@echo ... src/anonymity/fingerprint.s
+	@echo ... src/anonymity/secure_memory.obj
+	@echo ... src/anonymity/secure_memory.i
+	@echo ... src/anonymity/secure_memory.s
 	@echo ... src/anonymity/tor_connector.obj
 	@echo ... src/anonymity/tor_connector.i
 	@echo ... src/anonymity/tor_connector.s
@@ -395,9 +425,6 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/secure_memory.obj
-	@echo ... src/secure_memory.i
-	@echo ... src/secure_memory.s
 	@echo ... src/security/header_analyzer.obj
 	@echo ... src/security/header_analyzer.i
 	@echo ... src/security/header_analyzer.s

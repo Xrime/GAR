@@ -16,7 +16,7 @@ namespace gar::core {
         HttpResponse performRequest(const HttpRequest& request);
 
         ~HttpClient();
-
+        void refreshFingerprint();
         HttpResponse get(const std::string & url);
         HttpResponse post(const std::string& url,
                           const std::string& body,

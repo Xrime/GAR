@@ -5,11 +5,22 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <vector>
+#include <chrono>
 
 namespace gar::core {
+
     dnsResolver::dnsResolver(const std::string &socks_host, int socks_port)
     : host_(socks_host), port_(socks_port){}
     bool dnsResolver::resolve(const std::string &host, std::string &out_ip) {
+        auto now = std::chrono::steady_clock::now();
+        auto it = cache_.find(host);
+        if (it != cache_.end()) {
+            if (now < it -> second.expires_at) {
+                out_ip = it->second.ip;
+                return true;
+            }
+            cache_.erase(it);
+        }
         WSADATA wsa;
         if (WSAStartup(MAKEWORD(2,2), &wsa) != 0) {
             last_error_= "Wsastartup failed";
@@ -104,6 +115,11 @@ namespace gar::core {
         out_ip = ipbuf;
         closesocket(sock);
         WSACleanup();
+        cache_[host] = {out_ip, std::chrono::steady_clock::now() +ttl_};
         return true;
     }
+    void dnsResolver::clear_cache() {
+        cache_.clear();
+    }
+
 }

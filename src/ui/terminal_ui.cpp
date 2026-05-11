@@ -13,7 +13,9 @@
 
 #include "security/header_analyzer.h"
 #include "../../include/anonymity/tor_control.h"
+#include "anonymity/fingerprint.h"
 #include "anonymity/secure_memory.h"
+#include "core/dns_resolver.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -90,6 +92,8 @@ namespace gar::terminal_ui {
         std::cout<<"header - analyze security headers\n";
         std::cout<<"newnym - request new IP circuit\n";
         std::cout<< "IP - show exit IP \n";
+        std::cout<<"dnsflush - clear DNS cache\n";
+        std::cout<<"rotatefp - rotate fingerprint profile\n";
 
     }
 
@@ -198,6 +202,17 @@ namespace gar::terminal_ui {
                 for (const auto& h : report.missing) std::cout<<" - "<<h<<"\n";
                 std::cout<<"\n";
             }
+            else if (line == "rotatefp") {
+                static gar::anonymity::Fingerprint fp;
+                fp.rotate();
+                http_client.refreshFingerprint();
+                std::cout<<"Fingerprint rotated.\n\n";
+            }
+            else if(line == "dnsflush") {
+                static gar::core::dnsResolver resolver;
+                resolver.clear_cache();
+                std::cout <<"DNS cache cleared \n\n";
+            }
              else if (line == "history") {
                 if (history.empty()) {
                     std::cout << "Histroy is empty.\n\n";
@@ -239,7 +254,7 @@ namespace gar::terminal_ui {
                     std::cout <<"Invalid number format.\n\n";
                 }
             }
-            else if (line == "torip") {
+            else if (line == "IP") {
                 goToURL("https://check.torproject.org/", true);
 
             }

@@ -1,7 +1,3 @@
-#include "../../include/core/http_client.h"
-
-#include <chrono>
-
 #include "../../include/core/http_request.h"
 #include "../../include/core/http_response.h"
 #include "../../include/core/ihttp_transport.h"
@@ -11,6 +7,10 @@
 #include <algorithm>
 #include <random>
 #include <curl/curl.h>
+#include <chrono>
+#include "../../include/core/http_client.h"
+#include "../../include/core/dns_resolver.h"
+#include "../../include/anonymity/fingerprint.h"
 #ifdef _WIN32
     #include <winsock2.h>
     #include <ws2tcpip.h>
@@ -45,13 +45,14 @@ static void close_socket (SOCKET sock) {
 #endif
 
 }
-
+static gar::anonymity::Fingerprint g_fingerprint;
 static size_t write_callback(void* contents, size_t size, size_t num_ofmeb, void* userp) {
     size_t total = size * num_ofmeb;
     std::string* out = (std::string*)userp;
     out ->append((char*)contents, total);
     return total;
 }
+
 
 namespace gar::core {
     HttpClient::HttpClient(const std::string &socks5_host, int socks5_port)
@@ -66,6 +67,10 @@ namespace gar::core {
         //create default headers
         setHeader("User-Agent", "GAR");
         setHeader("Connection","close");
+        auto fp_headers = g_fingerprint.build_headers();
+        for (auto& h : fp_headers) {
+            setHeader(h.first, h.second);
+        }
     }
 
     HttpClient::~HttpClient() {
@@ -87,6 +92,7 @@ namespace gar::core {
         return performRequest(request);
 
         }
+
     HttpResponse HttpClient::post(const std::string &url, const std::string &body, const std::map<std::string, std::string> &headers) {
         if (url.empty()) {
             seterror("Url can't be empty");
@@ -110,6 +116,13 @@ namespace gar::core {
         default_headers_[key] =value;
     }
 
+
+    void HttpClient::refreshFingerprint() {
+        auto fp_headers =g_fingerprint.build_headers();
+        for (auto& h : fp_headers) {
+            setHeader(h.first, h.second);
+        }
+    }
 
     bool HttpClient::isConnected() const {
         return is_connected;
@@ -365,17 +378,24 @@ namespace gar::core {
         connect_cmd.push_back(0x05);
         connect_cmd.push_back(0x01);
         connect_cmd.push_back(0x00);
-        connect_cmd.push_back(0x03);
-        connect_cmd.push_back((unsigned char)host.length());
 
-        for (char c: host) {
-            connect_cmd.push_back((unsigned char )c);
+
+        std::string resolved_ip;
+        static gar::core::dnsResolver resolver;
+        if (resolver.resolve(host, resolved_ip)) {
+            connect_cmd.push_back(0x01);
+            in_addr addr4{};
+            inet_pton(AF_INET, resolved_ip.c_str(), &addr4);
+            unsigned char* bytes = reinterpret_cast<unsigned char*>(&addr4);
+            connect_cmd.insert(connect_cmd.end(), bytes, bytes+4);
+        }else {
+            connect_cmd.push_back(0x03);
+            connect_cmd.push_back((unsigned char)host.length());
+            for (char c: host) {
+                connect_cmd.push_back((unsigned char )c);
+            }
         }
 
-
-        // unsigned short port_net = htons(port);
-        // connect_cmd.push_back((port_net >>8)& 0xFF);
-        // connect_cmd.push_back(port_net & 0xFF);
 
         connect_cmd.push_back((port >>8)  & 0xFF);
         connect_cmd.push_back(port & 0xFF);

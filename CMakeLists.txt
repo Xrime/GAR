@@ -22,7 +22,7 @@ add_executable(GAR
         include/ui/terminal_ui.h
         src/ui/terminal_ui.cpp
         include/anonymity/secure_memory.h
-        src/secure_memory.cpp
+        src/anonymity/secure_memory.cpp
         include/ui/renderer.h
         src/ui/renderer.cpp
         include/security/header_analyzer.h
@@ -31,6 +31,8 @@ add_executable(GAR
         src/anonymity/tor_control.cpp
         include/core/dns_resolver.h
         src/core/dns_resolver.cpp
+        include/anonymity/fingerprint.h
+        src/anonymity/fingerprint.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

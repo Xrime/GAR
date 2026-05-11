@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj"
+  "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj.d"
+  "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj"
+  "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj"
   "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj"
@@ -11,8 +15,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/main.cpp.obj"
   "CMakeFiles/GAR.dir/src/main.cpp.obj.d"
-  "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj"
-  "CMakeFiles/GAR.dir/src/secure_memory.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj"
   "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj"
