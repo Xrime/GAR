@@ -16,6 +16,7 @@
 #include "anonymity/fingerprint.h"
 #include "anonymity/secure_memory.h"
 #include "core/dns_resolver.h"
+#include "../../include/security/tls_inspector.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -94,9 +95,9 @@ namespace gar::terminal_ui {
         std::cout<< "IP - show exit IP \n";
         std::cout<<"dnsflush - clear DNS cache\n";
         std::cout<<"rotatefp - rotate fingerprint profile\n";
+        std::cout<<"tls <host> - inspect TLS certificate \n";
 
     }
-
 
     void TerminalUI::goToURL(const std::string &url, bool add_to_history) {
         auto start = std::chrono::steady_clock::now();
@@ -197,10 +198,23 @@ namespace gar::terminal_ui {
                 auto report = HeaderAnalzer::analyze(last_headers);
                 std::cout<<"\n...Security Headers..\n";
                 std::cout<<"present:\n";
-                for (const auto& h : report.present) std::cout<<" + "<<h<<"\n";
-                std::cout<<"Missing\n";
-                for (const auto& h : report.missing) std::cout<<" - "<<h<<"\n";
-                std::cout<<"\n";
+                std::cout<<"{report.issues}";
+                std::cout<<report.score;
+            }
+            else if (line.rfind("tls", 0)==0) {
+                std::string host = line.substr(4);
+                gar::security::TLSInspector inspector;
+                auto report = inspector.inspect(host);
+
+                if (!report.success) {
+                    std::cout << "TLS inspect failed: "<< report.error <<"\n\n";
+                }else {
+                    std::cout <<"subject: "<< report.subject<<"\n";
+                    std::cout <<"issuer: "<< report.issuer<<"\n";
+                    std::cout<<"valid: "<< report.not_before<<" ->"<<report.not_after<<"\n";
+                    std::cout<<"Days left: "<<report.days_left<<"\n\n";
+
+                }
             }
             else if (line == "rotatefp") {
                 static gar::anonymity::Fingerprint fp;

@@ -236,6 +236,21 @@ CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\anonymity\fingerprint.cpp -o CMakeFiles\GAR.dir\src\anonymity\fingerprint.cpp.s
 
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj: CMakeFiles/GAR.dir/flags.make
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/security/tls_inspector.cpp
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj -MF CMakeFiles\GAR.dir\src\security\tls_inspector.cpp.obj.d -o CMakeFiles\GAR.dir\src\security\tls_inspector.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\security\tls_inspector.cpp
+
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\security\tls_inspector.cpp > CMakeFiles\GAR.dir\src\security\tls_inspector.cpp.i
+
+CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\security\tls_inspector.cpp -o CMakeFiles\GAR.dir\src\security\tls_inspector.cpp.s
+
 # Object files for target GAR
 GAR_OBJECTS = \
 "CMakeFiles/GAR.dir/src/main.cpp.obj" \
@@ -248,7 +263,8 @@ GAR_OBJECTS = \
 "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj" \
 "CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj" \
-"CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj"
+"CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj" \
+"CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj"
 
 # External object files for target GAR
 GAR_EXTERNAL_OBJECTS =
@@ -264,13 +280,14 @@ GAR.exe: CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj
+GAR.exe: CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/build.make
 GAR.exe: C:/msys64/mingw64/lib/libcurl.dll.a
 GAR.exe: C:/msys64/mingw64/lib/libgumbo.a
 GAR.exe: CMakeFiles/GAR.dir/linkLibs.rsp
 GAR.exe: CMakeFiles/GAR.dir/objects1.rsp
 GAR.exe: CMakeFiles/GAR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable GAR.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable GAR.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GAR.dir\link.txt --verbose=$(VERBOSE)
 	C:\msys64\mingw64\bin\cmake.exe -E copy_directory C:/Users/xint2/CLionProjects/GAR/certs C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/certs
 

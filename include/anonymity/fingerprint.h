@@ -13,6 +13,7 @@ namespace gar::anonymity {
         std::string user_agent;
         std::string accept_language;
         std::string accept_encoding;
+        std::map<std::string, std::string> extra_headers;
     };
 
     class Fingerprint {

@@ -33,6 +33,8 @@ add_executable(GAR
         src/core/dns_resolver.cpp
         include/anonymity/fingerprint.h
         src/anonymity/fingerprint.cpp
+        include/security/tls_inspector.h
+        src/security/tls_inspector.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

@@ -344,6 +344,30 @@ src/security/header_analyzer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.s
 .PHONY : src/security/header_analyzer.cpp.s
 
+src/security/tls_inspector.obj: src/security/tls_inspector.cpp.obj
+.PHONY : src/security/tls_inspector.obj
+
+# target to build an object file
+src/security/tls_inspector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj
+.PHONY : src/security/tls_inspector.cpp.obj
+
+src/security/tls_inspector.i: src/security/tls_inspector.cpp.i
+.PHONY : src/security/tls_inspector.i
+
+# target to preprocess a source file
+src/security/tls_inspector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.i
+.PHONY : src/security/tls_inspector.cpp.i
+
+src/security/tls_inspector.s: src/security/tls_inspector.cpp.s
+.PHONY : src/security/tls_inspector.s
+
+# target to generate assembly for a file
+src/security/tls_inspector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.s
+.PHONY : src/security/tls_inspector.cpp.s
+
 src/ui/renderer.obj: src/ui/renderer.cpp.obj
 .PHONY : src/ui/renderer.obj
 
@@ -428,6 +452,9 @@ help:
 	@echo ... src/security/header_analyzer.obj
 	@echo ... src/security/header_analyzer.i
 	@echo ... src/security/header_analyzer.s
+	@echo ... src/security/tls_inspector.obj
+	@echo ... src/security/tls_inspector.i
+	@echo ... src/security/tls_inspector.s
 	@echo ... src/ui/renderer.obj
 	@echo ... src/ui/renderer.i
 	@echo ... src/ui/renderer.s
