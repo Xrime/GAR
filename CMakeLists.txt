@@ -9,7 +9,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
 include_directories(include)
 
 find_package(CURL REQUIRED)
+find_package(OpenSSL REQUIRED)
 find_library(GUMBO_LIBRARY gumbo)
+
 include_directories("c:/msys64/mingw64/include")
 
 
@@ -35,6 +37,8 @@ add_executable(GAR
         src/anonymity/fingerprint.cpp
         include/security/tls_inspector.h
         src/security/tls_inspector.cpp
+        include/security/request_replay.h
+        src/security/request_replay.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
@@ -42,6 +46,7 @@ add_custom_command(TARGET GAR POST_BUILD
         $<TARGET_FILE_DIR:GAR>/certs)
 
 target_link_libraries(GAR PRIVATE CURL::libcurl)
+target_link_libraries(GAR PRIVATE OpenSSL::SSL OpenSSL::Crypto)
 target_link_libraries(GAR PRIVATE C:/msys64/mingw64/lib/libgumbo.a)
 
 if(WIN32)

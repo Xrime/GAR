@@ -13,6 +13,6 @@ C:\msys64\mingw64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:
 --   Build Type: Debug
 --   Platform: Windows
 --   Linking: CURL + ws2_32 (Windows sockets)
--- Configuring done (1.2s)
--- Generating done (0.2s)
+-- Configuring done (6.0s)
+-- Generating done (0.6s)
 -- Build files have been written to: C:/Users/xint2/CLionProjects/GAR/cmake-build-debug

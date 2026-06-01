@@ -47,5 +47,7 @@ namespace gar::anonymity {
         for (auto& h : active_.extra_headers) {
             headers[h.first] = h.second;
         }
+        return headers;
     }
+
 }

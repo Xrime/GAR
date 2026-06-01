@@ -344,6 +344,30 @@ src/security/header_analyzer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.s
 .PHONY : src/security/header_analyzer.cpp.s
 
+src/security/request_replay.obj: src/security/request_replay.cpp.obj
+.PHONY : src/security/request_replay.obj
+
+# target to build an object file
+src/security/request_replay.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj
+.PHONY : src/security/request_replay.cpp.obj
+
+src/security/request_replay.i: src/security/request_replay.cpp.i
+.PHONY : src/security/request_replay.i
+
+# target to preprocess a source file
+src/security/request_replay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.i
+.PHONY : src/security/request_replay.cpp.i
+
+src/security/request_replay.s: src/security/request_replay.cpp.s
+.PHONY : src/security/request_replay.s
+
+# target to generate assembly for a file
+src/security/request_replay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.s
+.PHONY : src/security/request_replay.cpp.s
+
 src/security/tls_inspector.obj: src/security/tls_inspector.cpp.obj
 .PHONY : src/security/tls_inspector.obj
 
@@ -452,6 +476,9 @@ help:
 	@echo ... src/security/header_analyzer.obj
 	@echo ... src/security/header_analyzer.i
 	@echo ... src/security/header_analyzer.s
+	@echo ... src/security/request_replay.obj
+	@echo ... src/security/request_replay.i
+	@echo ... src/security/request_replay.s
 	@echo ... src/security/tls_inspector.obj
 	@echo ... src/security/tls_inspector.i
 	@echo ... src/security/tls_inspector.s

@@ -17,6 +17,7 @@
 #include "anonymity/secure_memory.h"
 #include "core/dns_resolver.h"
 #include "../../include/security/tls_inspector.h"
+#include "../../include/security/request_replay.h"
 
 static  std::string normalize_url(std::string input) {
     while (!input.empty() && (input.front()==' ' || input.front()=='\t')) {
@@ -32,6 +33,7 @@ static  std::string normalize_url(std::string input) {
     }
     return "https://"+input;
 }
+static gar::security::requestReplay replay;
 
 namespace gar::terminal_ui {
     std::string TerminalUI::make_absolute_url(const std::string& base_url, const std::string& href) {
@@ -96,6 +98,7 @@ namespace gar::terminal_ui {
         std::cout<<"dnsflush - clear DNS cache\n";
         std::cout<<"rotatefp - rotate fingerprint profile\n";
         std::cout<<"tls <host> - inspect TLS certificate \n";
+        std::cout<<"replay - replay the request\n";
 
     }
 
@@ -134,6 +137,10 @@ namespace gar::terminal_ui {
         }
 
         std::cout << "\n[status]"<<last_url<<"|"<<last_status<<"|"<<last_size<<"bytes\n"<<" | "<< ms <<"ms\n\n"<<std::endl;
+        gar::security::captureRequest req;
+        req.method = "GET";
+        req.url = url;
+        replay.capture(req);
 
         if (add_to_history) {
             if (history_index< (int)history.size()-1) {
@@ -200,6 +207,14 @@ namespace gar::terminal_ui {
                 std::cout<<"present:\n";
                 std::cout<<"{report.issues}";
                 std::cout<<report.score;
+            }
+            else if (line  == "replay") {
+                auto res = replay.replay();
+                if (!res.success) {
+                    std::cout<<"Replay failed"<<res.error<<"\n\n";
+                }else {
+                    std::cout<<"Replay OK. Status: "<< res.status_code<<"Body bytes: "<<res.body_size<<"\n\n";
+                }
             }
             else if (line.rfind("tls", 0)==0) {
                 std::string host = line.substr(4);

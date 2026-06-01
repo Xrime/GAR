@@ -26,7 +26,7 @@ namespace gar::core {
 
         bool isConnected() const;
         std::string getLastError() const;
-
+        const std::map<std::string, std::string>& getHeaders() const;
     private:
         std::map<std::string, std::string> default_headers_;
         bool is_connected;
