@@ -148,6 +148,30 @@ GAR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
 .PHONY : GAR/fast
 
+include/ui/tui_main.obj: include/ui/tui_main.cpp.obj
+.PHONY : include/ui/tui_main.obj
+
+# target to build an object file
+include/ui/tui_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj
+.PHONY : include/ui/tui_main.cpp.obj
+
+include/ui/tui_main.i: include/ui/tui_main.cpp.i
+.PHONY : include/ui/tui_main.i
+
+# target to preprocess a source file
+include/ui/tui_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.i
+.PHONY : include/ui/tui_main.cpp.i
+
+include/ui/tui_main.s: include/ui/tui_main.cpp.s
+.PHONY : include/ui/tui_main.s
+
+# target to generate assembly for a file
+include/ui/tui_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.s
+.PHONY : include/ui/tui_main.cpp.s
+
 src/anonymity/fingerprint.obj: src/anonymity/fingerprint.cpp.obj
 .PHONY : src/anonymity/fingerprint.obj
 
@@ -495,6 +519,9 @@ help:
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... GAR
+	@echo ... include/ui/tui_main.obj
+	@echo ... include/ui/tui_main.i
+	@echo ... include/ui/tui_main.s
 	@echo ... src/anonymity/fingerprint.obj
 	@echo ... src/anonymity/fingerprint.i
 	@echo ... src/anonymity/fingerprint.s

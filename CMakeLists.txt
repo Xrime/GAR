@@ -42,6 +42,7 @@ add_executable(GAR
         include/ui/settings.h
         src/ui/settings.cpp
         include/ui/tui_app.h
+        include/ui/tui_main.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

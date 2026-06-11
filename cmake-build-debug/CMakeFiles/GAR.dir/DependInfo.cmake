@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/xint2/CLionProjects/GAR/include/ui/tui_main.cpp" "CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj" "gcc" "CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/fingerprint.cpp" "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/secure_memory.cpp" "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_connector.cpp" "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj.d"

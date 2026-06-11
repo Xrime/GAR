@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj"
+  "CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj"
   "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj"
