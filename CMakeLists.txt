@@ -39,6 +39,8 @@ add_executable(GAR
         src/security/tls_inspector.cpp
         include/security/request_replay.h
         src/security/request_replay.cpp
+        include/ui/settings.h
+        src/ui/settings.cpp
 )
 add_custom_command(TARGET GAR POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory

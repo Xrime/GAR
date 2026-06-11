@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/xint2/CLionProjects/GAR/src/security/request_replay.cpp" "CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/security/tls_inspector.cpp" "CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/ui/renderer.cpp" "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj.d"
+  "C:/Users/xint2/CLionProjects/GAR/src/ui/settings.cpp" "CMakeFiles/GAR.dir/src/ui/settings.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/ui/settings.cpp.obj.d"
   "C:/Users/xint2/CLionProjects/GAR/src/ui/terminal_ui.cpp" "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj" "gcc" "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj.d"
   )
 

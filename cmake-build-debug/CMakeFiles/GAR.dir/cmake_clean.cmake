@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj"
   "CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj.d"
+  "CMakeFiles/GAR.dir/src/ui/settings.cpp.obj"
+  "CMakeFiles/GAR.dir/src/ui/settings.cpp.obj.d"
   "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj"
   "CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj.d"
   "GAR.exe"

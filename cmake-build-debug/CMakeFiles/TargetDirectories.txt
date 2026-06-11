@@ -1,3 +1,5 @@
 C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/CMakeFiles/GAR.dir
+C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/CMakeFiles/package.dir
+C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/CMakeFiles/package_source.dir
 C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/CMakeFiles/rebuild_cache.dir

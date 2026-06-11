@@ -64,6 +64,26 @@ CMAKE_BINARY_DIR = C:\Users\xint2\CLionProjects\GAR\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	C:\msys64\mingw64\bin\cpack.exe --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	C:\msys64\mingw64\bin\cpack.exe --config ./CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -416,6 +436,30 @@ src/ui/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/renderer.cpp.s
 .PHONY : src/ui/renderer.cpp.s
 
+src/ui/settings.obj: src/ui/settings.cpp.obj
+.PHONY : src/ui/settings.obj
+
+# target to build an object file
+src/ui/settings.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.obj
+.PHONY : src/ui/settings.cpp.obj
+
+src/ui/settings.i: src/ui/settings.cpp.i
+.PHONY : src/ui/settings.i
+
+# target to preprocess a source file
+src/ui/settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.i
+.PHONY : src/ui/settings.cpp.i
+
+src/ui/settings.s: src/ui/settings.cpp.s
+.PHONY : src/ui/settings.s
+
+# target to generate assembly for a file
+src/ui/settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.s
+.PHONY : src/ui/settings.cpp.s
+
 src/ui/terminal_ui.obj: src/ui/terminal_ui.cpp.obj
 .PHONY : src/ui/terminal_ui.obj
 
@@ -447,6 +491,8 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... package
+	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... GAR
 	@echo ... src/anonymity/fingerprint.obj
@@ -485,6 +531,9 @@ help:
 	@echo ... src/ui/renderer.obj
 	@echo ... src/ui/renderer.i
 	@echo ... src/ui/renderer.s
+	@echo ... src/ui/settings.obj
+	@echo ... src/ui/settings.i
+	@echo ... src/ui/settings.s
 	@echo ... src/ui/terminal_ui.obj
 	@echo ... src/ui/terminal_ui.i
 	@echo ... src/ui/terminal_ui.s
