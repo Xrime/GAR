@@ -1,7 +1,10 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/cmake_install.cmake"
+		"C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/cmake_install.cmake",
+		"C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/_deps/ftxui-build/cmake_install.cmake",
+		"C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/_deps/ftxui-build/examples/cmake_install.cmake",
+		"C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/_deps/ftxui-build/doc/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

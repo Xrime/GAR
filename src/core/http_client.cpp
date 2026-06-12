@@ -266,7 +266,7 @@ namespace gar::core {
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
             curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
             curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
-
+            curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "");
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
             curl_easy_setopt(curl, CURLOPT_CAINFO, "certs/cacert.pem");

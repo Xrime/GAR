@@ -51,7 +51,8 @@ namespace gar::ui {
         std::thread t_thread_;
         std::mutex state_mutex_;
         bool t_ready_ =false;
-        bool t_start_error_;
+        std::string t_start_error_;
+        bool t_start_failed_;
         std::string url_input_;
         std::string current_url_;
         std::string last_capture_url_;

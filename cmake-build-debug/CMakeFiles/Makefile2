@@ -63,19 +63,95 @@ CMAKE_BINARY_DIR = C:\Users\xint2\CLionProjects\GAR\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/GAR.dir/all
+all: CMakeFiles/GAR_TUI.dir/all
+all: _deps/ftxui-build/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/GAR.dir/codegen
+codegen: CMakeFiles/GAR_TUI.dir/codegen
+codegen: _deps/ftxui-build/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: _deps/ftxui-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/GAR.dir/clean
+clean: CMakeFiles/GAR_TUI.dir/clean
+clean: _deps/ftxui-build/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory _deps/ftxui-build
+
+# Recursive "all" directory target.
+_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
+_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
+_deps/ftxui-build/all: _deps/ftxui-build/CMakeFiles/component.dir/all
+_deps/ftxui-build/all: _deps/ftxui-build/examples/all
+_deps/ftxui-build/all: _deps/ftxui-build/doc/all
+.PHONY : _deps/ftxui-build/all
+
+# Recursive "codegen" directory target.
+_deps/ftxui-build/codegen: _deps/ftxui-build/CMakeFiles/screen.dir/codegen
+_deps/ftxui-build/codegen: _deps/ftxui-build/CMakeFiles/dom.dir/codegen
+_deps/ftxui-build/codegen: _deps/ftxui-build/CMakeFiles/component.dir/codegen
+_deps/ftxui-build/codegen: _deps/ftxui-build/examples/codegen
+_deps/ftxui-build/codegen: _deps/ftxui-build/doc/codegen
+.PHONY : _deps/ftxui-build/codegen
+
+# Recursive "preinstall" directory target.
+_deps/ftxui-build/preinstall: _deps/ftxui-build/examples/preinstall
+_deps/ftxui-build/preinstall: _deps/ftxui-build/doc/preinstall
+.PHONY : _deps/ftxui-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/screen.dir/clean
+_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/dom.dir/clean
+_deps/ftxui-build/clean: _deps/ftxui-build/CMakeFiles/component.dir/clean
+_deps/ftxui-build/clean: _deps/ftxui-build/examples/clean
+_deps/ftxui-build/clean: _deps/ftxui-build/doc/clean
+.PHONY : _deps/ftxui-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/ftxui-build/doc
+
+# Recursive "all" directory target.
+_deps/ftxui-build/doc/all:
+.PHONY : _deps/ftxui-build/doc/all
+
+# Recursive "codegen" directory target.
+_deps/ftxui-build/doc/codegen:
+.PHONY : _deps/ftxui-build/doc/codegen
+
+# Recursive "preinstall" directory target.
+_deps/ftxui-build/doc/preinstall:
+.PHONY : _deps/ftxui-build/doc/preinstall
+
+# Recursive "clean" directory target.
+_deps/ftxui-build/doc/clean:
+.PHONY : _deps/ftxui-build/doc/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/ftxui-build/examples
+
+# Recursive "all" directory target.
+_deps/ftxui-build/examples/all:
+.PHONY : _deps/ftxui-build/examples/all
+
+# Recursive "codegen" directory target.
+_deps/ftxui-build/examples/codegen:
+.PHONY : _deps/ftxui-build/examples/codegen
+
+# Recursive "preinstall" directory target.
+_deps/ftxui-build/examples/preinstall:
+.PHONY : _deps/ftxui-build/examples/preinstall
+
+# Recursive "clean" directory target.
+_deps/ftxui-build/examples/clean:
+.PHONY : _deps/ftxui-build/examples/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/GAR.dir
@@ -84,12 +160,12 @@ clean: CMakeFiles/GAR.dir/clean
 CMakeFiles/GAR.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target GAR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target GAR"
 .PHONY : CMakeFiles/GAR.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GAR.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/GAR.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/GAR.dir/rule
@@ -101,13 +177,144 @@ GAR: CMakeFiles/GAR.dir/rule
 # codegen rule for target.
 CMakeFiles/GAR.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Finished codegen for target GAR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Finished codegen for target GAR"
 .PHONY : CMakeFiles/GAR.dir/codegen
 
 # clean rule for target.
 CMakeFiles/GAR.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/clean
 .PHONY : CMakeFiles/GAR.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/GAR_TUI.dir
+
+# All Build rule for target.
+CMakeFiles/GAR_TUI.dir/all: _deps/ftxui-build/CMakeFiles/component.dir/all
+CMakeFiles/GAR_TUI.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
+CMakeFiles/GAR_TUI.dir/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26 "Built target GAR_TUI"
+.PHONY : CMakeFiles/GAR_TUI.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/GAR_TUI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 87
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/GAR_TUI.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/GAR_TUI.dir/rule
+
+# Convenience name for target.
+GAR_TUI: CMakeFiles/GAR_TUI.dir/rule
+.PHONY : GAR_TUI
+
+# codegen rule for target.
+CMakeFiles/GAR_TUI.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26 "Finished codegen for target GAR_TUI"
+.PHONY : CMakeFiles/GAR_TUI.dir/codegen
+
+# clean rule for target.
+CMakeFiles/GAR_TUI.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/clean
+.PHONY : CMakeFiles/GAR_TUI.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/ftxui-build/CMakeFiles/screen.dir
+
+# All Build rule for target.
+_deps/ftxui-build/CMakeFiles/screen.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\screen.dir\build.make _deps/ftxui-build/CMakeFiles/screen.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\screen.dir\build.make _deps/ftxui-build/CMakeFiles/screen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=93,94,95,96,97,98,99,100 "Built target screen"
+.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/ftxui-build/CMakeFiles/screen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/ftxui-build/CMakeFiles/screen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
+.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/rule
+
+# Convenience name for target.
+screen: _deps/ftxui-build/CMakeFiles/screen.dir/rule
+.PHONY : screen
+
+# codegen rule for target.
+_deps/ftxui-build/CMakeFiles/screen.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\screen.dir\build.make _deps/ftxui-build/CMakeFiles/screen.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=93,94,95,96,97,98,99,100 "Finished codegen for target screen"
+.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/codegen
+
+# clean rule for target.
+_deps/ftxui-build/CMakeFiles/screen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\screen.dir\build.make _deps/ftxui-build/CMakeFiles/screen.dir/clean
+.PHONY : _deps/ftxui-build/CMakeFiles/screen.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/ftxui-build/CMakeFiles/dom.dir
+
+# All Build rule for target.
+_deps/ftxui-build/CMakeFiles/dom.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\dom.dir\build.make _deps/ftxui-build/CMakeFiles/dom.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\dom.dir\build.make _deps/ftxui-build/CMakeFiles/dom.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92 "Built target dom"
+.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/ftxui-build/CMakeFiles/dom.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 49
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/ftxui-build/CMakeFiles/dom.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
+.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/rule
+
+# Convenience name for target.
+dom: _deps/ftxui-build/CMakeFiles/dom.dir/rule
+.PHONY : dom
+
+# codegen rule for target.
+_deps/ftxui-build/CMakeFiles/dom.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\dom.dir\build.make _deps/ftxui-build/CMakeFiles/dom.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92 "Finished codegen for target dom"
+.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/codegen
+
+# clean rule for target.
+_deps/ftxui-build/CMakeFiles/dom.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\dom.dir\build.make _deps/ftxui-build/CMakeFiles/dom.dir/clean
+.PHONY : _deps/ftxui-build/CMakeFiles/dom.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/ftxui-build/CMakeFiles/component.dir
+
+# All Build rule for target.
+_deps/ftxui-build/CMakeFiles/component.dir/all: _deps/ftxui-build/CMakeFiles/screen.dir/all
+_deps/ftxui-build/CMakeFiles/component.dir/all: _deps/ftxui-build/CMakeFiles/dom.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\component.dir\build.make _deps/ftxui-build/CMakeFiles/component.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\component.dir\build.make _deps/ftxui-build/CMakeFiles/component.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51 "Built target component"
+.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/ftxui-build/CMakeFiles/component.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 74
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/ftxui-build/CMakeFiles/component.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles 0
+.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/rule
+
+# Convenience name for target.
+component: _deps/ftxui-build/CMakeFiles/component.dir/rule
+.PHONY : component
+
+# codegen rule for target.
+_deps/ftxui-build/CMakeFiles/component.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\component.dir\build.make _deps/ftxui-build/CMakeFiles/component.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51 "Finished codegen for target component"
+.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/codegen
+
+# clean rule for target.
+_deps/ftxui-build/CMakeFiles/component.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\component.dir\build.make _deps/ftxui-build/CMakeFiles/component.dir/clean
+.PHONY : _deps/ftxui-build/CMakeFiles/component.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -104,6 +104,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	C:\msys64\mingw64\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	C:\msys64\mingw64\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\\CMakeFiles\progress.marks
@@ -148,29 +193,57 @@ GAR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/build
 .PHONY : GAR/fast
 
-include/ui/tui_main.obj: include/ui/tui_main.cpp.obj
-.PHONY : include/ui/tui_main.obj
+#=============================================================================
+# Target rules for targets named GAR_TUI
 
-# target to build an object file
-include/ui/tui_main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj
-.PHONY : include/ui/tui_main.cpp.obj
+# Build rule for target.
+GAR_TUI: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GAR_TUI
+.PHONY : GAR_TUI
 
-include/ui/tui_main.i: include/ui/tui_main.cpp.i
-.PHONY : include/ui/tui_main.i
+# fast build rule for target.
+GAR_TUI/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/build
+.PHONY : GAR_TUI/fast
 
-# target to preprocess a source file
-include/ui/tui_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.i
-.PHONY : include/ui/tui_main.cpp.i
+#=============================================================================
+# Target rules for targets named screen
 
-include/ui/tui_main.s: include/ui/tui_main.cpp.s
-.PHONY : include/ui/tui_main.s
+# Build rule for target.
+screen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 screen
+.PHONY : screen
 
-# target to generate assembly for a file
-include/ui/tui_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/include/ui/tui_main.cpp.s
-.PHONY : include/ui/tui_main.cpp.s
+# fast build rule for target.
+screen/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\screen.dir\build.make _deps/ftxui-build/CMakeFiles/screen.dir/build
+.PHONY : screen/fast
+
+#=============================================================================
+# Target rules for targets named dom
+
+# Build rule for target.
+dom: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dom
+.PHONY : dom
+
+# fast build rule for target.
+dom/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\dom.dir\build.make _deps/ftxui-build/CMakeFiles/dom.dir/build
+.PHONY : dom/fast
+
+#=============================================================================
+# Target rules for targets named component
+
+# Build rule for target.
+component: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 component
+.PHONY : component
+
+# fast build rule for target.
+component/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\ftxui-build\CMakeFiles\component.dir\build.make _deps/ftxui-build/CMakeFiles/component.dir/build
+.PHONY : component/fast
 
 src/anonymity/fingerprint.obj: src/anonymity/fingerprint.cpp.obj
 .PHONY : src/anonymity/fingerprint.obj
@@ -178,6 +251,7 @@ src/anonymity/fingerprint.obj: src/anonymity/fingerprint.cpp.obj
 # target to build an object file
 src/anonymity/fingerprint.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/fingerprint.cpp.obj
 .PHONY : src/anonymity/fingerprint.cpp.obj
 
 src/anonymity/fingerprint.i: src/anonymity/fingerprint.cpp.i
@@ -186,6 +260,7 @@ src/anonymity/fingerprint.i: src/anonymity/fingerprint.cpp.i
 # target to preprocess a source file
 src/anonymity/fingerprint.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/fingerprint.cpp.i
 .PHONY : src/anonymity/fingerprint.cpp.i
 
 src/anonymity/fingerprint.s: src/anonymity/fingerprint.cpp.s
@@ -194,6 +269,7 @@ src/anonymity/fingerprint.s: src/anonymity/fingerprint.cpp.s
 # target to generate assembly for a file
 src/anonymity/fingerprint.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/fingerprint.cpp.s
 .PHONY : src/anonymity/fingerprint.cpp.s
 
 src/anonymity/secure_memory.obj: src/anonymity/secure_memory.cpp.obj
@@ -202,6 +278,7 @@ src/anonymity/secure_memory.obj: src/anonymity/secure_memory.cpp.obj
 # target to build an object file
 src/anonymity/secure_memory.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/secure_memory.cpp.obj
 .PHONY : src/anonymity/secure_memory.cpp.obj
 
 src/anonymity/secure_memory.i: src/anonymity/secure_memory.cpp.i
@@ -210,6 +287,7 @@ src/anonymity/secure_memory.i: src/anonymity/secure_memory.cpp.i
 # target to preprocess a source file
 src/anonymity/secure_memory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/secure_memory.cpp.i
 .PHONY : src/anonymity/secure_memory.cpp.i
 
 src/anonymity/secure_memory.s: src/anonymity/secure_memory.cpp.s
@@ -218,6 +296,7 @@ src/anonymity/secure_memory.s: src/anonymity/secure_memory.cpp.s
 # target to generate assembly for a file
 src/anonymity/secure_memory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/secure_memory.cpp.s
 .PHONY : src/anonymity/secure_memory.cpp.s
 
 src/anonymity/tor_connector.obj: src/anonymity/tor_connector.cpp.obj
@@ -226,6 +305,7 @@ src/anonymity/tor_connector.obj: src/anonymity/tor_connector.cpp.obj
 # target to build an object file
 src/anonymity/tor_connector.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_connector.cpp.obj
 .PHONY : src/anonymity/tor_connector.cpp.obj
 
 src/anonymity/tor_connector.i: src/anonymity/tor_connector.cpp.i
@@ -234,6 +314,7 @@ src/anonymity/tor_connector.i: src/anonymity/tor_connector.cpp.i
 # target to preprocess a source file
 src/anonymity/tor_connector.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_connector.cpp.i
 .PHONY : src/anonymity/tor_connector.cpp.i
 
 src/anonymity/tor_connector.s: src/anonymity/tor_connector.cpp.s
@@ -242,6 +323,7 @@ src/anonymity/tor_connector.s: src/anonymity/tor_connector.cpp.s
 # target to generate assembly for a file
 src/anonymity/tor_connector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_connector.cpp.s
 .PHONY : src/anonymity/tor_connector.cpp.s
 
 src/anonymity/tor_control.obj: src/anonymity/tor_control.cpp.obj
@@ -250,6 +332,7 @@ src/anonymity/tor_control.obj: src/anonymity/tor_control.cpp.obj
 # target to build an object file
 src/anonymity/tor_control.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_control.cpp.obj
 .PHONY : src/anonymity/tor_control.cpp.obj
 
 src/anonymity/tor_control.i: src/anonymity/tor_control.cpp.i
@@ -258,6 +341,7 @@ src/anonymity/tor_control.i: src/anonymity/tor_control.cpp.i
 # target to preprocess a source file
 src/anonymity/tor_control.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_control.cpp.i
 .PHONY : src/anonymity/tor_control.cpp.i
 
 src/anonymity/tor_control.s: src/anonymity/tor_control.cpp.s
@@ -266,6 +350,7 @@ src/anonymity/tor_control.s: src/anonymity/tor_control.cpp.s
 # target to generate assembly for a file
 src/anonymity/tor_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_control.cpp.s
 .PHONY : src/anonymity/tor_control.cpp.s
 
 src/anonymity/tor_manager.obj: src/anonymity/tor_manager.cpp.obj
@@ -274,6 +359,7 @@ src/anonymity/tor_manager.obj: src/anonymity/tor_manager.cpp.obj
 # target to build an object file
 src/anonymity/tor_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_manager.cpp.obj
 .PHONY : src/anonymity/tor_manager.cpp.obj
 
 src/anonymity/tor_manager.i: src/anonymity/tor_manager.cpp.i
@@ -282,6 +368,7 @@ src/anonymity/tor_manager.i: src/anonymity/tor_manager.cpp.i
 # target to preprocess a source file
 src/anonymity/tor_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_manager.cpp.i
 .PHONY : src/anonymity/tor_manager.cpp.i
 
 src/anonymity/tor_manager.s: src/anonymity/tor_manager.cpp.s
@@ -290,6 +377,7 @@ src/anonymity/tor_manager.s: src/anonymity/tor_manager.cpp.s
 # target to generate assembly for a file
 src/anonymity/tor_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/anonymity/tor_manager.cpp.s
 .PHONY : src/anonymity/tor_manager.cpp.s
 
 src/core/dns_resolver.obj: src/core/dns_resolver.cpp.obj
@@ -298,6 +386,7 @@ src/core/dns_resolver.obj: src/core/dns_resolver.cpp.obj
 # target to build an object file
 src/core/dns_resolver.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/dns_resolver.cpp.obj
 .PHONY : src/core/dns_resolver.cpp.obj
 
 src/core/dns_resolver.i: src/core/dns_resolver.cpp.i
@@ -306,6 +395,7 @@ src/core/dns_resolver.i: src/core/dns_resolver.cpp.i
 # target to preprocess a source file
 src/core/dns_resolver.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/dns_resolver.cpp.i
 .PHONY : src/core/dns_resolver.cpp.i
 
 src/core/dns_resolver.s: src/core/dns_resolver.cpp.s
@@ -314,6 +404,7 @@ src/core/dns_resolver.s: src/core/dns_resolver.cpp.s
 # target to generate assembly for a file
 src/core/dns_resolver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/dns_resolver.cpp.s
 .PHONY : src/core/dns_resolver.cpp.s
 
 src/core/http_client.obj: src/core/http_client.cpp.obj
@@ -322,6 +413,7 @@ src/core/http_client.obj: src/core/http_client.cpp.obj
 # target to build an object file
 src/core/http_client.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/http_client.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/http_client.cpp.obj
 .PHONY : src/core/http_client.cpp.obj
 
 src/core/http_client.i: src/core/http_client.cpp.i
@@ -330,6 +422,7 @@ src/core/http_client.i: src/core/http_client.cpp.i
 # target to preprocess a source file
 src/core/http_client.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/http_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/http_client.cpp.i
 .PHONY : src/core/http_client.cpp.i
 
 src/core/http_client.s: src/core/http_client.cpp.s
@@ -338,6 +431,7 @@ src/core/http_client.s: src/core/http_client.cpp.s
 # target to generate assembly for a file
 src/core/http_client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/core/http_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/core/http_client.cpp.s
 .PHONY : src/core/http_client.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -370,6 +464,7 @@ src/security/header_analyzer.obj: src/security/header_analyzer.cpp.obj
 # target to build an object file
 src/security/header_analyzer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/header_analyzer.cpp.obj
 .PHONY : src/security/header_analyzer.cpp.obj
 
 src/security/header_analyzer.i: src/security/header_analyzer.cpp.i
@@ -378,6 +473,7 @@ src/security/header_analyzer.i: src/security/header_analyzer.cpp.i
 # target to preprocess a source file
 src/security/header_analyzer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/header_analyzer.cpp.i
 .PHONY : src/security/header_analyzer.cpp.i
 
 src/security/header_analyzer.s: src/security/header_analyzer.cpp.s
@@ -386,6 +482,7 @@ src/security/header_analyzer.s: src/security/header_analyzer.cpp.s
 # target to generate assembly for a file
 src/security/header_analyzer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/header_analyzer.cpp.s
 .PHONY : src/security/header_analyzer.cpp.s
 
 src/security/request_replay.obj: src/security/request_replay.cpp.obj
@@ -394,6 +491,7 @@ src/security/request_replay.obj: src/security/request_replay.cpp.obj
 # target to build an object file
 src/security/request_replay.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/request_replay.cpp.obj
 .PHONY : src/security/request_replay.cpp.obj
 
 src/security/request_replay.i: src/security/request_replay.cpp.i
@@ -402,6 +500,7 @@ src/security/request_replay.i: src/security/request_replay.cpp.i
 # target to preprocess a source file
 src/security/request_replay.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/request_replay.cpp.i
 .PHONY : src/security/request_replay.cpp.i
 
 src/security/request_replay.s: src/security/request_replay.cpp.s
@@ -410,6 +509,7 @@ src/security/request_replay.s: src/security/request_replay.cpp.s
 # target to generate assembly for a file
 src/security/request_replay.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/request_replay.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/request_replay.cpp.s
 .PHONY : src/security/request_replay.cpp.s
 
 src/security/tls_inspector.obj: src/security/tls_inspector.cpp.obj
@@ -418,6 +518,7 @@ src/security/tls_inspector.obj: src/security/tls_inspector.cpp.obj
 # target to build an object file
 src/security/tls_inspector.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/tls_inspector.cpp.obj
 .PHONY : src/security/tls_inspector.cpp.obj
 
 src/security/tls_inspector.i: src/security/tls_inspector.cpp.i
@@ -426,6 +527,7 @@ src/security/tls_inspector.i: src/security/tls_inspector.cpp.i
 # target to preprocess a source file
 src/security/tls_inspector.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/tls_inspector.cpp.i
 .PHONY : src/security/tls_inspector.cpp.i
 
 src/security/tls_inspector.s: src/security/tls_inspector.cpp.s
@@ -434,6 +536,7 @@ src/security/tls_inspector.s: src/security/tls_inspector.cpp.s
 # target to generate assembly for a file
 src/security/tls_inspector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/security/tls_inspector.cpp.s
 .PHONY : src/security/tls_inspector.cpp.s
 
 src/ui/renderer.obj: src/ui/renderer.cpp.obj
@@ -465,7 +568,7 @@ src/ui/settings.obj: src/ui/settings.cpp.obj
 
 # target to build an object file
 src/ui/settings.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/settings.cpp.obj
 .PHONY : src/ui/settings.cpp.obj
 
 src/ui/settings.i: src/ui/settings.cpp.i
@@ -473,7 +576,7 @@ src/ui/settings.i: src/ui/settings.cpp.i
 
 # target to preprocess a source file
 src/ui/settings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/settings.cpp.i
 .PHONY : src/ui/settings.cpp.i
 
 src/ui/settings.s: src/ui/settings.cpp.s
@@ -481,7 +584,7 @@ src/ui/settings.s: src/ui/settings.cpp.s
 
 # target to generate assembly for a file
 src/ui/settings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/settings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/settings.cpp.s
 .PHONY : src/ui/settings.cpp.s
 
 src/ui/terminal_ui.obj: src/ui/terminal_ui.cpp.obj
@@ -508,6 +611,54 @@ src/ui/terminal_ui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR.dir\build.make CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s
 .PHONY : src/ui/terminal_ui.cpp.s
 
+src/ui/tui_app.obj: src/ui/tui_app.cpp.obj
+.PHONY : src/ui/tui_app.obj
+
+# target to build an object file
+src/ui/tui_app.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_app.cpp.obj
+.PHONY : src/ui/tui_app.cpp.obj
+
+src/ui/tui_app.i: src/ui/tui_app.cpp.i
+.PHONY : src/ui/tui_app.i
+
+# target to preprocess a source file
+src/ui/tui_app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_app.cpp.i
+.PHONY : src/ui/tui_app.cpp.i
+
+src/ui/tui_app.s: src/ui/tui_app.cpp.s
+.PHONY : src/ui/tui_app.s
+
+# target to generate assembly for a file
+src/ui/tui_app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_app.cpp.s
+.PHONY : src/ui/tui_app.cpp.s
+
+src/ui/tui_main.obj: src/ui/tui_main.cpp.obj
+.PHONY : src/ui/tui_main.obj
+
+# target to build an object file
+src/ui/tui_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_main.cpp.obj
+.PHONY : src/ui/tui_main.cpp.obj
+
+src/ui/tui_main.i: src/ui/tui_main.cpp.i
+.PHONY : src/ui/tui_main.i
+
+# target to preprocess a source file
+src/ui/tui_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_main.cpp.i
+.PHONY : src/ui/tui_main.cpp.i
+
+src/ui/tui_main.s: src/ui/tui_main.cpp.s
+.PHONY : src/ui/tui_main.s
+
+# target to generate assembly for a file
+src/ui/tui_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GAR_TUI.dir\build.make CMakeFiles/GAR_TUI.dir/src/ui/tui_main.cpp.s
+.PHONY : src/ui/tui_main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -515,13 +666,18 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... package
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... GAR
-	@echo ... include/ui/tui_main.obj
-	@echo ... include/ui/tui_main.i
-	@echo ... include/ui/tui_main.s
+	@echo ... GAR_TUI
+	@echo ... component
+	@echo ... dom
+	@echo ... screen
 	@echo ... src/anonymity/fingerprint.obj
 	@echo ... src/anonymity/fingerprint.i
 	@echo ... src/anonymity/fingerprint.s
@@ -564,6 +720,12 @@ help:
 	@echo ... src/ui/terminal_ui.obj
 	@echo ... src/ui/terminal_ui.i
 	@echo ... src/ui/terminal_ui.s
+	@echo ... src/ui/tui_app.obj
+	@echo ... src/ui/tui_app.i
+	@echo ... src/ui/tui_app.s
+	@echo ... src/ui/tui_main.obj
+	@echo ... src/ui/tui_main.i
+	@echo ... src/ui/tui_main.s
 .PHONY : help
 
 

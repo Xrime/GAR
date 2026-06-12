@@ -86,11 +86,41 @@ CMakeFiles/GAR.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/main.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\main.cpp -o CMakeFiles\GAR.dir\src\main.cpp.s
 
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/flags.make
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/ui/terminal_ui.cpp
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj -MF CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.obj.d -o CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp
+
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp > CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.i
+
+CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp -o CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.s
+
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/flags.make
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/ui/renderer.cpp
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj -MF CMakeFiles\GAR.dir\src\ui\renderer.cpp.obj.d -o CMakeFiles\GAR.dir\src\ui\renderer.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp
+
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/ui/renderer.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp > CMakeFiles\GAR.dir\src\ui\renderer.cpp.i
+
+CMakeFiles/GAR.dir/src/ui/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/ui/renderer.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp -o CMakeFiles\GAR.dir\src\ui\renderer.cpp.s
+
 CMakeFiles/GAR.dir/src/core/http_client.cpp.obj: CMakeFiles/GAR.dir/flags.make
 CMakeFiles/GAR.dir/src/core/http_client.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
 CMakeFiles/GAR.dir/src/core/http_client.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/core/http_client.cpp
 CMakeFiles/GAR.dir/src/core/http_client.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GAR.dir/src/core/http_client.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GAR.dir/src/core/http_client.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/core/http_client.cpp.obj -MF CMakeFiles\GAR.dir\src\core\http_client.cpp.obj.d -o CMakeFiles\GAR.dir\src\core\http_client.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\core\http_client.cpp
 
 CMakeFiles/GAR.dir/src/core/http_client.cpp.i: cmake_force
@@ -105,7 +135,7 @@ CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj: CMakeFiles/GAR.dir/flags
 CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
 CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_connector.cpp
 CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj -MF CMakeFiles\GAR.dir\src\anonymity\tor_connector.cpp.obj.d -o CMakeFiles\GAR.dir\src\anonymity\tor_connector.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\anonymity\tor_connector.cpp
 
 CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.i: cmake_force
@@ -120,7 +150,7 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: CMakeFiles/GAR.dir/flags.m
 CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
 CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/anonymity/tor_manager.cpp
 CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj -MF CMakeFiles\GAR.dir\src\anonymity\tor_manager.cpp.obj.d -o CMakeFiles\GAR.dir\src\anonymity\tor_manager.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\anonymity\tor_manager.cpp
 
 CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.i: cmake_force
@@ -131,26 +161,11 @@ CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\anonymity\tor_manager.cpp -o CMakeFiles\GAR.dir\src\anonymity\tor_manager.cpp.s
 
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/flags.make
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/ui/terminal_ui.cpp
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj -MF CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.obj.d -o CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp
-
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp > CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.i
-
-CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\ui\terminal_ui.cpp -o CMakeFiles\GAR.dir\src\ui\terminal_ui.cpp.s
-
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj: CMakeFiles/GAR.dir/flags.make
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/anonymity/secure_memory.cpp
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj -MF CMakeFiles\GAR.dir\src\anonymity\secure_memory.cpp.obj.d -o CMakeFiles\GAR.dir\src\anonymity\secure_memory.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\anonymity\secure_memory.cpp
 
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.i: cmake_force
@@ -160,21 +175,6 @@ CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.i: cmake_force
 CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\anonymity\secure_memory.cpp -o CMakeFiles\GAR.dir\src\anonymity\secure_memory.cpp.s
-
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/flags.make
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/ui/renderer.cpp
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj -MF CMakeFiles\GAR.dir\src\ui\renderer.cpp.obj.d -o CMakeFiles\GAR.dir\src\ui\renderer.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp
-
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/ui/renderer.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp > CMakeFiles\GAR.dir\src\ui\renderer.cpp.i
-
-CMakeFiles/GAR.dir/src/ui/renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/ui/renderer.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\ui\renderer.cpp -o CMakeFiles\GAR.dir\src\ui\renderer.cpp.s
 
 CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj: CMakeFiles/GAR.dir/flags.make
 CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
@@ -266,72 +266,38 @@ CMakeFiles/GAR.dir/src/security/request_replay.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/security/request_replay.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\security\request_replay.cpp -o CMakeFiles\GAR.dir\src\security\request_replay.cpp.s
 
-CMakeFiles/GAR.dir/src/ui/settings.cpp.obj: CMakeFiles/GAR.dir/flags.make
-CMakeFiles/GAR.dir/src/ui/settings.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
-CMakeFiles/GAR.dir/src/ui/settings.cpp.obj: C:/Users/xint2/CLionProjects/GAR/src/ui/settings.cpp
-CMakeFiles/GAR.dir/src/ui/settings.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/GAR.dir/src/ui/settings.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/src/ui/settings.cpp.obj -MF CMakeFiles\GAR.dir\src\ui\settings.cpp.obj.d -o CMakeFiles\GAR.dir\src\ui\settings.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\src\ui\settings.cpp
-
-CMakeFiles/GAR.dir/src/ui/settings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/src/ui/settings.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\src\ui\settings.cpp > CMakeFiles\GAR.dir\src\ui\settings.cpp.i
-
-CMakeFiles/GAR.dir/src/ui/settings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/src/ui/settings.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\src\ui\settings.cpp -o CMakeFiles\GAR.dir\src\ui\settings.cpp.s
-
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj: CMakeFiles/GAR.dir/flags.make
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj: CMakeFiles/GAR.dir/includes_CXX.rsp
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj: C:/Users/xint2/CLionProjects/GAR/include/ui/tui_main.cpp
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj: CMakeFiles/GAR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj -MF CMakeFiles\GAR.dir\include\ui\tui_main.cpp.obj.d -o CMakeFiles\GAR.dir\include\ui\tui_main.cpp.obj -c C:\Users\xint2\CLionProjects\GAR\include\ui\tui_main.cpp
-
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GAR.dir/include/ui/tui_main.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\xint2\CLionProjects\GAR\include\ui\tui_main.cpp > CMakeFiles\GAR.dir\include\ui\tui_main.cpp.i
-
-CMakeFiles/GAR.dir/include/ui/tui_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GAR.dir/include/ui/tui_main.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\xint2\CLionProjects\GAR\include\ui\tui_main.cpp -o CMakeFiles\GAR.dir\include\ui\tui_main.cpp.s
-
 # Object files for target GAR
 GAR_OBJECTS = \
 "CMakeFiles/GAR.dir/src/main.cpp.obj" \
+"CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj" \
+"CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj" \
 "CMakeFiles/GAR.dir/src/core/http_client.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj" \
-"CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj" \
-"CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj" \
 "CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj" \
 "CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj" \
 "CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj" \
 "CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj" \
-"CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj" \
-"CMakeFiles/GAR.dir/src/ui/settings.cpp.obj" \
-"CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj"
+"CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj"
 
 # External object files for target GAR
 GAR_EXTERNAL_OBJECTS =
 
 GAR.exe: CMakeFiles/GAR.dir/src/main.cpp.obj
+GAR.exe: CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj
+GAR.exe: CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/core/http_client.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/tor_connector.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/tor_manager.cpp.obj
-GAR.exe: CMakeFiles/GAR.dir/src/ui/terminal_ui.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/secure_memory.cpp.obj
-GAR.exe: CMakeFiles/GAR.dir/src/ui/renderer.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/security/header_analyzer.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/tor_control.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/core/dns_resolver.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/anonymity/fingerprint.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/security/tls_inspector.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/src/security/request_replay.cpp.obj
-GAR.exe: CMakeFiles/GAR.dir/src/ui/settings.cpp.obj
-GAR.exe: CMakeFiles/GAR.dir/include/ui/tui_main.cpp.obj
 GAR.exe: CMakeFiles/GAR.dir/build.make
 GAR.exe: C:/msys64/mingw64/lib/libcurl.dll.a
 GAR.exe: C:/msys64/mingw64/lib/libssl.dll.a
@@ -340,7 +306,7 @@ GAR.exe: C:/msys64/mingw64/lib/libgumbo.a
 GAR.exe: CMakeFiles/GAR.dir/linkLibs.rsp
 GAR.exe: CMakeFiles/GAR.dir/objects1.rsp
 GAR.exe: CMakeFiles/GAR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable GAR.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\xint2\CLionProjects\GAR\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable GAR.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GAR.dir\link.txt --verbose=$(VERBOSE)
 	C:\msys64\mingw64\bin\cmake.exe -E copy_directory C:/Users/xint2/CLionProjects/GAR/certs C:/Users/xint2/CLionProjects/GAR/cmake-build-debug/certs
 
