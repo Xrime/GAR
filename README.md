@@ -1,22 +1,4 @@
-# GAR Browser
 
-This is browser that does not look like other typical web browser it only work in the terminal and it does not save almost any track in the memory while using it is written in c++. GAR routes all your traffic through Tor network anything been done is completely anonymous and private, through Terminal User Interface.
-
-##  Features
-
-### Privacy & Security
-- **Native Tor Integration**: All traffic is routed through a local Tor SOCKS5 proxy .
-- **Dark Web Ready**: Seamlessly browse both Clearnet domains and `.onion` hidden services.
-- **Fingerprint Rotation**: Spoof and rotate HTTP headers and User-Agents to prevent browser fingerprinting tracking.
-- **TLS & Header Inspection**: Built-in tools to deeply analyze SSL/TLS certificates and HTTP security headers of any website.
-- **DNS Flush & New Identity**: Clear your DNS cache and signal the Tor daemon for a completely new circuit (new IP address) instantly.
-
-### Modern TUI (Terminal User Interface)
-- **Interactive UI**: Built using the FTXUI library, featuring a split-pane design, interactive forms, and keyboard navigation.
-- **Universal Scrolling**: Custom scroll engine to seamlessly read long web pages directly in the terminal using `Page Up` and `Page Down`.
-- **Smart Search**: Built-in DuckDuckGo Lite integration. Type a URL to go directly to it, or type a word/phrase to automatically search DuckDuckGo securely via Tor.
-- **Content Parsers**: Automatically extracts Hyperlinks, Forms, and Media into organized side-panel menus using Google's Gumbo HTML parser.
-- **Background Threading**: Heavy networking and Tor negotiations happen on background threads, ensuring the UI remains perfectly smooth and responsive.
 # GAR Browser
 
 This is browser that does not look like other typical web browser it only work in the terminal and it does not save almost any track in the memory while using it is written in c++. GAR routes all your traffic through Tor network anything been done is completely anonymous and private, through Terminal User Interface.
